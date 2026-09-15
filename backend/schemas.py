@@ -1,10 +1,11 @@
+import re
 from pydantic import BaseModel, EmailStr, Field, SecretStr, field_validator, model_validator
 from typing import Optional
 from datetime import datetime
 from models.base import UserRole, MediaType, PrivacyLevel
 
-# Keep in sync with "locales" in frontend/project.inlang/settings.json.
-SUPPORTED_UI_LANGUAGES = ("en", "fr")
+# Shape of a BCP 47 language tag ("fr", "pt-BR"); see validate_ui_language.
+UI_LANGUAGE_TAG = re.compile(r"[a-z]{2,3}(-[A-Za-z0-9]{2,8})*")
 
 class UserBase(BaseModel):
     email: EmailStr
@@ -222,9 +223,13 @@ class UserSettings(BaseModel):
     @field_validator("ui_language")
     @classmethod
     def validate_ui_language(cls, value):
-        # Only languages the frontend actually ships messages for - an unknown
-        # code would be written to the cookie and silently fall back to English.
-        if value is not None and value not in SUPPORTED_UI_LANGUAGES:
+        # Only the shape of a language tag is checked here: the frontend's
+        # project.inlang/settings.json is the single list of shipped languages,
+        # and the middleware ignores a stored code that isn't one of them (the
+        # browser language applies instead), so adding a language needs no
+        # backend change.
+        # Capped at the column width (user_settings.ui_language is String(10)).
+        if value is not None and (len(value) > 10 or not UI_LANGUAGE_TAG.fullmatch(value)):
             raise ValueError(f"Unsupported UI language: {value}")
         return value
 
