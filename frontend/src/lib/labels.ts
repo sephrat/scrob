@@ -3,7 +3,7 @@
 // user sees is translated. Unknown values (e.g. genres TMDB already returned in
 // the metadata language) are shown as-is.
 import { m } from "../paraglide/messages.js";
-import { getLocale } from "../paraglide/runtime.js";
+import { baseLocale, getLocale } from "../paraglide/runtime.js";
 
 const GENRES: Record<string, () => string> = {
   "Action": m.genre_action,
@@ -76,7 +76,7 @@ const capitalize = (s: string) => s.charAt(0).toLocaleUpperCase(getLocale()) + s
 // which reads wrong as a standalone option label - hence the capitalization.
 export function languageName(code: string): string {
   try {
-    return capitalize(new Intl.DisplayNames([getLocale()], { type: "language" }).of(code) ?? code);
+    return capitalize(new Intl.DisplayNames([getLocale()], { type: "language", languageDisplay: "standard" }).of(code) ?? code);
   } catch {
     return code;
   }
@@ -93,4 +93,15 @@ export function countryName(code: string): string {
 // Sorts option labels in the UI language's alphabetical order.
 export function sortByLabel<T extends { label: string }>(options: T[]): T[] {
   return [...options].sort((a, b) => a.label.localeCompare(b.label, getLocale()));
+}
+
+// For curated option lists that already carry an English label: keep it
+// verbatim in English (some differ from CLDR, e.g. "Hong Kong" rather than
+// "Hong Kong SAR China") and use the CLDR name in any other UI language.
+export function localizedLanguageName(code: string, englishName: string): string {
+  return getLocale() === baseLocale ? englishName : languageName(code);
+}
+
+export function localizedCountryName(code: string, englishName: string): string {
+  return getLocale() === baseLocale ? englishName : countryName(code);
 }
