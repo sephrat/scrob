@@ -27,8 +27,25 @@ const base = load(settings.baseLocale);
 let problems = 0;
 const report = (msg) => { problems++; console.error(msg); };
 
+// Variant messages (plural/select) need a catch-all "*" match: CLDR plural
+// categories vary by locale (French also has "many"), and a value no variant
+// matches renders the message key instead of text.
+function checkCatchAll(locale, catalog) {
+  for (const [key, message] of Object.entries(catalog)) {
+    if (!Array.isArray(message)) continue;
+    for (const variant of message) {
+      const matchKeys = Object.keys(variant.match ?? {});
+      if (matchKeys.length && !matchKeys.some((k) => k.split(",").every((part) => part.trim().endsWith("=*")))) {
+        report(`[${locale}] no catch-all (=*) variant in ${key}`);
+      }
+    }
+  }
+}
+checkCatchAll(settings.baseLocale, base);
+
 for (const locale of settings.locales.filter(l => l !== settings.baseLocale)) {
   const catalog = load(locale);
+  checkCatchAll(locale, catalog);
   for (const key of Object.keys(base)) {
     if (!(key in catalog)) { report(`[${locale}] missing: ${key}`); continue; }
     if (variables(base[key]) !== variables(catalog[key])) {

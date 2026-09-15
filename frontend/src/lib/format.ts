@@ -4,6 +4,7 @@
 // browser. Use these instead of toLocale*String('en-US') or an undefined locale,
 // which would follow the server's or browser's locale rather than the UI's.
 import { getLocale } from "../paraglide/runtime.js";
+import { m } from "../paraglide/messages.js";
 
 type DateInput = Date | string | number;
 
@@ -44,4 +45,18 @@ export function escapeHtml(value: unknown): string {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
+}
+
+// Compact "5m ago" / "3d ago" style age, as shown on profile activity rows.
+export function formatTimeAgo(date: DateInput): string {
+  const diff = Date.now() - toDate(date).getTime();
+  const mins = Math.floor(diff / 60000);
+  if (mins < 60) return m.time_ago_minutes({ count: mins });
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return m.time_ago_hours({ count: hrs });
+  const days = Math.floor(hrs / 24);
+  if (days < 30) return m.time_ago_days({ count: days });
+  const months = Math.floor(days / 30);
+  if (months < 12) return m.time_ago_months({ count: months });
+  return m.time_ago_years({ count: Math.floor(months / 12) });
 }

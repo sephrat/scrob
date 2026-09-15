@@ -71,7 +71,8 @@
       ],
       "match": {
         "minutesPlural=one": "{minutes} min restante",
-        "minutesPlural=other": "{minutes} min restantes"
+        "minutesPlural=other": "{minutes} min restantes",
+        "minutesPlural=*": "{minutes} min restantes"
       }
     }
   ],
@@ -86,7 +87,8 @@
       ],
       "match": {
         "hoursPlural=one": "{hours} h restante",
-        "hoursPlural=other": "{hours} h restantes"
+        "hoursPlural=other": "{hours} h restantes",
+        "hoursPlural=*": "{hours} h restantes"
       }
     }
   ],
@@ -270,7 +272,8 @@
       ],
       "match": {
         "countPlural=one": "{count} élément",
-        "countPlural=other": "{count} éléments"
+        "countPlural=other": "{count} éléments",
+        "countPlural=*": "{count} éléments"
       }
     }
   ],
@@ -292,7 +295,8 @@
       ],
       "match": {
         "countPlural=one": "{count} épisode",
-        "countPlural=other": "{count} épisodes"
+        "countPlural=other": "{count} épisodes",
+        "countPlural=*": "{count} épisodes"
       }
     }
   ],
@@ -404,7 +408,8 @@
       ],
       "match": {
         "countPlural=one": "{count} épisode restant",
-        "countPlural=other": "{count} épisodes restants"
+        "countPlural=other": "{count} épisodes restants",
+        "countPlural=*": "{count} épisodes restants"
       }
     }
   ],
@@ -560,7 +565,8 @@
       ],
       "match": {
         "countPlural=one": "{count} résultat trouvé",
-        "countPlural=other": "{count} résultats trouvés"
+        "countPlural=other": "{count} résultats trouvés",
+        "countPlural=*": "{count} résultats trouvés"
       }
     }
   ],
@@ -667,7 +673,8 @@
       ],
       "match": {
         "countPlural=one": "Collection · {count} film",
-        "countPlural=other": "Collection · {count} films"
+        "countPlural=other": "Collection · {count} films",
+        "countPlural=*": "Collection · {count} films"
       }
     }
   ],
@@ -685,7 +692,8 @@
       ],
       "match": {
         "countPlural=one": "{count} film",
-        "countPlural=other": "{count} films"
+        "countPlural=other": "{count} films",
+        "countPlural=*": "{count} films"
       }
     }
   ],
@@ -709,7 +717,8 @@
       ],
       "match": {
         "countPlural=one": "{count} lecture",
-        "countPlural=other": "{count} lectures"
+        "countPlural=other": "{count} lectures",
+        "countPlural=*": "{count} lectures"
       }
     }
   ],
@@ -743,7 +752,8 @@
       ],
       "match": {
         "countPlural=one": "{count} saison",
-        "countPlural=other": "{count} saisons"
+        "countPlural=other": "{count} saisons",
+        "countPlural=*": "{count} saisons"
       }
     }
   ],
@@ -760,7 +770,8 @@
       ],
       "match": {
         "countPlural=one": "{count} épisode",
-        "countPlural=other": "{count} épisodes"
+        "countPlural=other": "{count} épisodes",
+        "countPlural=*": "{count} épisodes"
       }
     }
   ],
@@ -779,5 +790,368 @@
   "episode_guest_stars": "Invités",
   "tvdb_episode_not_tracked_title": "Pas encore suivi",
   "tvdb_episode_not_tracked_body": "Cet épisode existe peut-être aussi sur TMDB, mais il n’a pas encore été associé à sa position TVDB : il ne peut donc pas être marqué comme vu, noté ni ajouté à la collection. Essayez « Actualiser la correspondance des épisodes » ci-dessous.",
-  "tvdb_refresh_episode_matching": "Actualiser la correspondance des épisodes"
+  "tvdb_refresh_episode_matching": "Actualiser la correspondance des épisodes",
+  "history_page_title": "Historique de visionnage",
+  "history_date_unknown": "Date inconnue",
+  "common_all": "Tout",
+  "history_search_placeholder": "Rechercher dans votre historique…",
+  "history_no_results_for": "Aucun résultat pour « {query} »",
+  "history_empty": "Aucun historique pour le moment",
+  "history_clear_search": "Effacer la recherche",
+  "history_go_discover": "Découvrir quelque chose",
+  "dropped_page_title": "Abandonnés",
+  "dropped_summary": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} titre abandonné — exclu de « À suivre », « Reprendre la lecture », du calendrier et des recommandations.",
+        "countPlural=other": "{count} titres abandonnés — exclus de « À suivre », « Reprendre la lecture », du calendrier et des recommandations.",
+        "countPlural=*": "{count} titres abandonnés — exclus de « À suivre », « Reprendre la lecture », du calendrier et des recommandations."
+      }
+    }
+  ],
+  "dropped_intro": "Les séries et films que vous abandonnez sont rassemblés ici.",
+  "dropped_load_failed": "Impossible de charger vos titres abandonnés.",
+  "dropped_empty": "Rien d’abandonné.",
+  "dropped_empty_hint": "Abandonnez une série ou un film depuis sa page et il apparaîtra ici.",
+  "dropped_undrop_show": "Ne plus abandonner cette série",
+  "dropped_undrop_movie": "Ne plus abandonner ce film",
+  "dropped_undrop_title": "Ne plus abandonner {title}",
+  "cw_subtitle": "Reprenez là où vous en étiez",
+  "cw_show_hidden": "Afficher les masqués",
+  "cw_hide_hidden": "Cacher les masqués",
+  "cw_empty": "Rien en cours.",
+  "cw_empty_hint": "Commencez à regarder quelque chose pour le voir ici.",
+  "cw_remove": "Retirer de « Reprendre la lecture »",
+  "cw_drop_movie": "Abandonner ce film",
+  "next_up_subtitle": "Continuez là où vous en étiez",
+  "next_up_sort_recent": "Vus récemment",
+  "next_up_sort_episodes_asc": "Épisodes restants ↑",
+  "next_up_sort_episodes_desc": "Épisodes restants ↓",
+  "next_up_sort_time_asc": "Temps restant ↑",
+  "next_up_sort_time_desc": "Temps restant ↓",
+  "next_up_refresh_title": "Revérifier sur TMDB les nouveaux épisodes des séries qui n’apparaissent pas ici",
+  "next_up_refresh": "Actualiser depuis TMDB",
+  "next_up_checking_tmdb": "Vérification sur TMDB",
+  "next_up_checking_tmdb_ellipsis": "Vérification sur TMDB…",
+  "next_up_empty": "Rien à regarder pour le moment.",
+  "next_up_empty_hint": "Commencez une série pour voir vos prochains épisodes ici.",
+  "next_up_restore": "Remettre dans « À suivre »",
+  "next_up_hide_or_drop": "Masquer ou abandonner cette série",
+  "next_up_refresh_progress": [
+    {
+      "declarations": [
+        "input total",
+        "local totalPlural = total: plural"
+      ],
+      "selectors": [
+        "totalPlural"
+      ],
+      "match": {
+        "totalPlural=one": "{done} série sur {total}",
+        "totalPlural=other": "{done} séries sur {total}",
+        "totalPlural=*": "{done} séries sur {total}"
+      }
+    }
+  ],
+  "next_up_no_tmdb_key": "Aucune clé API TMDB configurée - ajoutez-en une dans les paramètres.",
+  "next_up_refreshed_added": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "Actualisé - {count} série ajoutée.",
+        "countPlural=other": "Actualisé - {count} séries ajoutées.",
+        "countPlural=*": "Actualisé - {count} séries ajoutées."
+      }
+    }
+  ],
+  "next_up_refreshed_none": "Actualisé - aucun nouvel épisode trouvé.",
+  "next_up_refresh_failed": "Échec de l’actualisation - réessayez dans un instant.",
+  "progress_tab_watched": "Vus",
+  "progress_tab_collection": "Collection",
+  "progress_sort_least_collected": "Moins collectionnées",
+  "progress_sort_most_collected": "Plus collectionnées",
+  "progress_sort_episodes_missing": "Épisodes manquants",
+  "progress_sort_recent": "Vues récemment",
+  "progress_sort_most_watched": "Plus avancées",
+  "progress_sort_least_watched": "Moins avancées",
+  "progress_sort_episodes_left": "Épisodes restants",
+  "progress_intro_collection": "L’état de votre bibliothèque pour chaque série dont vous possédez des épisodes.",
+  "progress_intro_watched": "Votre avancement dans chaque série que vous avez commencée.",
+  "progress_hide_complete": [
+    {
+      "declarations": [
+        "input view"
+      ],
+      "selectors": [
+        "view"
+      ],
+      "match": {
+        "view=collection": "Masquer les séries complètes",
+        "view=*": "Masquer les séries terminées"
+      }
+    }
+  ],
+  "progress_load_failed": "Impossible de charger votre progression.",
+  "progress_empty_collection": "Aucune série dans votre bibliothèque pour le moment.",
+  "progress_empty_watched": "Rien de commencé pour le moment.",
+  "progress_empty_collection_hint": "Ajoutez une série à votre collection pour la voir apparaître ici.",
+  "progress_empty_watched_hint": "Regardez un épisode d’une série pour la voir apparaître ici.",
+  "progress_meta_missing": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} manquant",
+        "countPlural=other": "{count} manquants",
+        "countPlural=*": "{count} manquants"
+      }
+    }
+  ],
+  "progress_meta_left": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} restant",
+        "countPlural=other": "{count} restants",
+        "countPlural=*": "{count} restants"
+      }
+    }
+  ],
+  "progress_meta_complete": "terminé",
+  "lists_my_lists": "Mes listes",
+  "lists_new_list": "Nouvelle liste",
+  "lists_create_new": "Créer une liste",
+  "lists_name": "Nom",
+  "lists_name_placeholder": "Ma liste à voir",
+  "lists_description_label": "Description <span class=\"text-zinc-400 normal-case font-normal tracking-normal\">(facultatif)</span>",
+  "lists_description_placeholder": "De quoi parle cette liste ?",
+  "privacy_label": "Confidentialité",
+  "privacy_private_short": "Privée",
+  "privacy_friends_short": "Amis",
+  "privacy_public_short": "Publique",
+  "lists_create_list": "Créer la liste",
+  "lists_empty": "Aucune liste pour le moment",
+  "lists_empty_hint": "Créez votre première liste pour organiser films et séries.",
+  "lists_create_a_list": "Créer une liste",
+  "lists_delete": "Supprimer la liste",
+  "lists_from_community": "De la communauté",
+  "lists_public_lists": "Listes publiques",
+  "lists_no_public": "Aucune liste publique pour le moment",
+  "lists_no_public_hint": "Revenez plus tard, ou connectez-vous pour voir les vôtres.",
+  "common_creating": "Création…",
+  "lists_create_failed": "Impossible de créer la liste",
+  "common_delete_named_confirm": "Supprimer « {name} » ?",
+  "list_private": "Cette liste est privée.",
+  "list_not_found": "Liste introuvable.",
+  "list_page_title_fallback": "Liste",
+  "list_back_to_lists": "Retour aux listes",
+  "common_edit": "Modifier",
+  "common_delete": "Supprimer",
+  "list_edit": "Modifier la liste",
+  "common_description": "Description",
+  "common_save_changes": "Enregistrer les modifications",
+  "list_arr_import_title": "Importer dans Radarr / Sonarr",
+  "list_arr_import_help": "Dans Radarr / Sonarr → Settings → Import Lists → Add → choisissez <strong class=\"text-zinc-300\">Radarr</strong> ou <strong class=\"text-zinc-300\">Sonarr</strong> comme type de liste. Collez l’URL ci-dessous dans <strong class=\"text-zinc-300\">Base URL</strong> et votre clé API Scrob (disponible dans les <a href=\"/settings\" class=\"text-blue-400 hover:underline\">paramètres</a>) dans <strong class=\"text-zinc-300\">API Key</strong>.",
+  "list_arr_radarr_movies": "Radarr — films",
+  "list_arr_sonarr_shows": "Sonarr — séries",
+  "common_copy": "Copier",
+  "common_copied": "Copié !",
+  "list_add_items": "Ajouter des éléments",
+  "list_search_placeholder": "Rechercher un film, une série ou une personne à ajouter…",
+  "common_searching": "Recherche…",
+  "common_no_results_found": "Aucun résultat trouvé.",
+  "list_items": "Éléments",
+  "list_empty_owner": "Cette liste est vide. Utilisez la recherche ci-dessus pour ajouter films et séries.",
+  "list_empty": "Cette liste est vide.",
+  "list_remove_item": "Retirer de la liste",
+  "list_filter_empty": "Aucun élément ne correspond à ce filtre.",
+  "list_other_lists": "Vos autres listes",
+  "list_update_failed": "Impossible de modifier la liste",
+  "list_delete_fallback_title": "cette liste",
+  "list_item_fallback_title": "cet élément",
+  "list_remove_confirm_title": "Retirer « {title} » ?",
+  "list_remove_confirm_body": "L’élément sera retiré de cette liste.",
+  "list_add": "Ajouter",
+  "list_already_in_list": "Déjà dans la liste",
+  "list_add_failed": "Impossible d’ajouter l’élément",
+  "list_added": "Ajouté !",
+  "profile_private": "Ce profil est privé.",
+  "profile_not_found": "Utilisateur introuvable.",
+  "profile_load_failed": "Impossible de charger le profil.",
+  "common_unknown": "Inconnu",
+  "profile_comment_season": "{title} — Saison {season}",
+  "time_ago_minutes": "il y a {count} min",
+  "time_ago_hours": "il y a {count} h",
+  "time_ago_days": "il y a {count} j",
+  "time_ago_months": "il y a {count} mois",
+  "time_ago_years": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "il y a {count} an",
+        "countPlural=other": "il y a {count} ans",
+        "countPlural=*": "il y a {count} ans"
+      }
+    }
+  ],
+  "profile_page_title": "Profil de {name}",
+  "profile_access_restricted": "Accès restreint",
+  "common_return_home": "Retour à l’accueil",
+  "profile_edit": "Modifier le profil",
+  "profile_joined": "Membre depuis {date}",
+  "profile_movies_watched": "Films vus",
+  "profile_shows_watched": "Séries vues",
+  "profile_items_collected": "Éléments collectionnés",
+  "profile_items_rated": "Éléments notés",
+  "profile_view_statistics": "Voir les statistiques",
+  "section_recently_watched_movies": "Films vus récemment",
+  "section_recently_watched_shows": "Séries vues récemment",
+  "section_top_rated_movies": "Films les mieux notés",
+  "section_top_rated_shows": "Séries les mieux notées",
+  "profile_recent_comments": "Commentaires récents",
+  "profile_no_activity": "Aucune activité à afficher pour le moment.",
+  "profile_about": "À propos",
+  "profile_no_bio": "Pas encore de biographie.",
+  "profile_favorite_genres": "Genres préférés",
+  "profile_following": "Abonnements",
+  "profile_followers": "Abonnés",
+  "profile_request_failed": "Échec de la requête",
+  "top_rated_movies_load_failed": "Impossible de charger les films les mieux notés.",
+  "top_rated_shows_load_failed": "Impossible de charger les séries les mieux notées.",
+  "recently_watched_movies_load_failed": "Impossible de charger les films vus récemment.",
+  "recently_watched_shows_load_failed": "Impossible de charger les séries vues récemment.",
+  "top_rated_movies_empty": "Aucun film noté pour le moment.",
+  "top_rated_shows_empty": "Aucune série notée pour le moment.",
+  "recently_watched_movies_empty": "Aucun film vu pour le moment.",
+  "recently_watched_shows_empty": "Aucune série vue pour le moment.",
+  "requests_title": "Demandes de médias",
+  "requests_summary": "{pending} en attente · {approved} approuvées · {rejected} refusées",
+  "requests_awaiting": "En attente de validation ({count})",
+  "requests_none_pending": "Aucune demande en attente.",
+  "requests_requested_by": "{type} · demande de {user}",
+  "requests_approve": "Approuver",
+  "requests_reject": "Refuser",
+  "requests_approved_count": "Approuvées ({count})",
+  "requests_none_approved": "Aucune demande approuvée.",
+  "requests_approved": "Approuvée",
+  "requests_rejected_count": "Refusées ({count})",
+  "requests_none_rejected": "Aucune demande refusée.",
+  "requests_rejected": "Refusée",
+  "common_failed": "Échec",
+  "requests_approved_toast": "Demande approuvée et envoyée à Radarr/Sonarr.",
+  "requests_approve_failed": "Impossible d’approuver",
+  "requests_rejected_toast": "Demande refusée.",
+  "requests_reject_failed": "Impossible de refuser",
+  "stats_watching": "Visionnage",
+  "stats_period_all": "Depuis toujours",
+  "stats_period_year": "Cette année",
+  "stats_period_month": "Ce mois-ci",
+  "stats_period_week": "Cette semaine",
+  "stats_period_last365": "365 derniers jours",
+  "stats_period_last30": "30 derniers jours",
+  "stats_period_last7": "7 derniers jours",
+  "stats_activity_over_time": "Activité dans le temps",
+  "stats_most_watched_genres": "Genres les plus regardés",
+  "stats_watch_time_over_time": "Temps de visionnage dans le temps",
+  "stats_watch_time": "Temps de visionnage",
+  "stats_average_ratings": "Notes moyennes",
+  "stats_rating_distribution": "Répartition des notes",
+  "stats_avg_by_weekday": "Activité moyenne par jour de la semaine",
+  "stats_by_weekday": "Activité par jour de la semaine",
+  "stats_most_watched": "Les plus regardés",
+  "stats_most_played_shows": "Séries les plus lues",
+  "stats_most_played_movies": "Films les plus lus",
+  "stats_favourite_networks": "Chaînes préférées",
+  "stats_most_watched_actors": "Acteurs les plus vus",
+  "stats_favourite_directors": "Réalisateurs préférés",
+  "stats_favourite_writers": "Scénaristes préférés",
+  "stats_favourite_studios": "Studios préférés",
+  "stats_collection": "Collection",
+  "stats_breakdown": "Répartition",
+  "stats_watched_vs_unwatched": "Vus / non vus",
+  "stats_days_short": "{value} j",
+  "stats_hours_short": "{value} h",
+  "stats_episodes_watched": "Épisodes vus",
+  "stats_bar_label_day": "{day} {month} {year}",
+  "stats_bar_label_month": "{month} {year}",
+  "stats_bar_info_counts": "{label} : {movies} films, {episodes} épisodes",
+  "stats_chart_movies": "Films",
+  "stats_chart_episodes": "Épisodes",
+  "stats_no_history_period": "Aucun historique pour la période sélectionnée.",
+  "stats_watch_time_tooltip": "{label} : {total} au total · {movies} de films · {shows} de séries",
+  "stats_no_watch_time_period": "Aucune donnée de temps de visionnage pour la période sélectionnée.",
+  "stats_no_ratings_period": "Aucune note pour la période sélectionnée.",
+  "stats_no_data": "Aucune donnée",
+  "stats_no_ratings": "Aucune note",
+  "stats_weekday_tooltip": "{day} : moyenne de {avg} éléments/semaine",
+  "stats_movies_collected": "Films collectionnés",
+  "stats_shows_collected": "Séries collectionnées",
+  "stats_episodes_collected": "Épisodes collectionnés",
+  "stats_movies_vs_shows": "Films / séries",
+  "stats_movies_watched": "Films vus",
+  "stats_shows_watched": "Séries vues",
+  "stats_watched": "Vus",
+  "stats_unwatched": "Non vus",
+  "stats_plays": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} lecture",
+        "countPlural=other": "{count} lectures",
+        "countPlural=*": "{count} lectures"
+      }
+    }
+  ],
+  "stats_titles": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} titre",
+        "countPlural=other": "{count} titres",
+        "countPlural=*": "{count} titres"
+      }
+    }
+  ]
 }

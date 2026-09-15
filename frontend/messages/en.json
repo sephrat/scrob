@@ -71,7 +71,8 @@
       ],
       "match": {
         "minutesPlural=one": "{minutes} min left",
-        "minutesPlural=other": "{minutes} min left"
+        "minutesPlural=other": "{minutes} min left",
+        "minutesPlural=*": "{minutes} min left"
       }
     }
   ],
@@ -86,7 +87,8 @@
       ],
       "match": {
         "hoursPlural=one": "{hours}h left",
-        "hoursPlural=other": "{hours}h left"
+        "hoursPlural=other": "{hours}h left",
+        "hoursPlural=*": "{hours}h left"
       }
     }
   ],
@@ -270,7 +272,8 @@
       ],
       "match": {
         "countPlural=one": "{count} item",
-        "countPlural=other": "{count} items"
+        "countPlural=other": "{count} items",
+        "countPlural=*": "{count} items"
       }
     }
   ],
@@ -292,7 +295,8 @@
       ],
       "match": {
         "countPlural=one": "{count} episode",
-        "countPlural=other": "{count} episodes"
+        "countPlural=other": "{count} episodes",
+        "countPlural=*": "{count} episodes"
       }
     }
   ],
@@ -404,7 +408,8 @@
       ],
       "match": {
         "countPlural=one": "{count} episode left",
-        "countPlural=other": "{count} episodes left"
+        "countPlural=other": "{count} episodes left",
+        "countPlural=*": "{count} episodes left"
       }
     }
   ],
@@ -560,7 +565,8 @@
       ],
       "match": {
         "countPlural=one": "{count} result found",
-        "countPlural=other": "{count} results found"
+        "countPlural=other": "{count} results found",
+        "countPlural=*": "{count} results found"
       }
     }
   ],
@@ -667,7 +673,8 @@
       ],
       "match": {
         "countPlural=one": "Collection · {count} film",
-        "countPlural=other": "Collection · {count} films"
+        "countPlural=other": "Collection · {count} films",
+        "countPlural=*": "Collection · {count} films"
       }
     }
   ],
@@ -685,7 +692,8 @@
       ],
       "match": {
         "countPlural=one": "{count} film",
-        "countPlural=other": "{count} films"
+        "countPlural=other": "{count} films",
+        "countPlural=*": "{count} films"
       }
     }
   ],
@@ -709,7 +717,8 @@
       ],
       "match": {
         "countPlural=one": "{count} Play",
-        "countPlural=other": "{count} Plays"
+        "countPlural=other": "{count} Plays",
+        "countPlural=*": "{count} Plays"
       }
     }
   ],
@@ -743,7 +752,8 @@
       ],
       "match": {
         "countPlural=one": "{count} Season",
-        "countPlural=other": "{count} Seasons"
+        "countPlural=other": "{count} Seasons",
+        "countPlural=*": "{count} Seasons"
       }
     }
   ],
@@ -760,7 +770,8 @@
       ],
       "match": {
         "countPlural=one": "{count} Episodes",
-        "countPlural=other": "{count} Episodes"
+        "countPlural=other": "{count} Episodes",
+        "countPlural=*": "{count} Episodes"
       }
     }
   ],
@@ -779,5 +790,368 @@
   "episode_guest_stars": "Guest Stars",
   "tvdb_episode_not_tracked_title": "Not tracked yet",
   "tvdb_episode_not_tracked_body": "This episode might exist on TMDB too, but hasn't been matched to its TVDB position yet, so it can't be marked watched, rated, or collected. Try \"Refresh Episode Matching\" below.",
-  "tvdb_refresh_episode_matching": "Refresh Episode Matching"
+  "tvdb_refresh_episode_matching": "Refresh Episode Matching",
+  "history_page_title": "Watch History",
+  "history_date_unknown": "Date unknown",
+  "common_all": "All",
+  "history_search_placeholder": "Search your history...",
+  "history_no_results_for": "No results for \"{query}\"",
+  "history_empty": "No history yet",
+  "history_clear_search": "Clear search",
+  "history_go_discover": "Go discover something",
+  "dropped_page_title": "Dropped",
+  "dropped_summary": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} title you've dropped — excluded from Next Up, Continue Watching, Calendar and recommendations.",
+        "countPlural=other": "{count} titles you've dropped — excluded from Next Up, Continue Watching, Calendar and recommendations.",
+        "countPlural=*": "{count} titles you've dropped — excluded from Next Up, Continue Watching, Calendar and recommendations."
+      }
+    }
+  ],
+  "dropped_intro": "Shows and movies you drop are collected here.",
+  "dropped_load_failed": "Couldn't load your dropped titles.",
+  "dropped_empty": "Nothing dropped.",
+  "dropped_empty_hint": "Drop a show or movie from its page and it'll show up here.",
+  "dropped_undrop_show": "Undrop this show",
+  "dropped_undrop_movie": "Undrop this movie",
+  "dropped_undrop_title": "Undrop {title}",
+  "cw_subtitle": "Pick up where you left off",
+  "cw_show_hidden": "Show hidden",
+  "cw_hide_hidden": "Hide hidden",
+  "cw_empty": "Nothing in progress.",
+  "cw_empty_hint": "Start watching something to see it here.",
+  "cw_remove": "Remove from Continue Watching",
+  "cw_drop_movie": "Drop this movie",
+  "next_up_subtitle": "Continue where you left off",
+  "next_up_sort_recent": "Recently watched",
+  "next_up_sort_episodes_asc": "Episodes left ↑",
+  "next_up_sort_episodes_desc": "Episodes left ↓",
+  "next_up_sort_time_asc": "Time left ↑",
+  "next_up_sort_time_desc": "Time left ↓",
+  "next_up_refresh_title": "Re-check TMDB for new episodes of shows that aren't showing here",
+  "next_up_refresh": "Refresh from TMDB",
+  "next_up_checking_tmdb": "Checking TMDB",
+  "next_up_checking_tmdb_ellipsis": "Checking TMDB…",
+  "next_up_empty": "Nothing to watch next.",
+  "next_up_empty_hint": "Start watching a show to see your next episodes here.",
+  "next_up_restore": "Restore to Next Up",
+  "next_up_hide_or_drop": "Hide or drop this show",
+  "next_up_refresh_progress": [
+    {
+      "declarations": [
+        "input total",
+        "local totalPlural = total: plural"
+      ],
+      "selectors": [
+        "totalPlural"
+      ],
+      "match": {
+        "totalPlural=one": "{done} of {total} show",
+        "totalPlural=other": "{done} of {total} shows",
+        "totalPlural=*": "{done} of {total} shows"
+      }
+    }
+  ],
+  "next_up_no_tmdb_key": "No TMDB API key configured - add one in Settings.",
+  "next_up_refreshed_added": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "Refreshed - {count} show added.",
+        "countPlural=other": "Refreshed - {count} shows added.",
+        "countPlural=*": "Refreshed - {count} shows added."
+      }
+    }
+  ],
+  "next_up_refreshed_none": "Refreshed - no new episodes found.",
+  "next_up_refresh_failed": "Refresh failed - try again in a moment.",
+  "progress_tab_watched": "Watched",
+  "progress_tab_collection": "Collection",
+  "progress_sort_least_collected": "Least collected",
+  "progress_sort_most_collected": "Most collected",
+  "progress_sort_episodes_missing": "Episodes missing",
+  "progress_sort_recent": "Recently watched",
+  "progress_sort_most_watched": "Most watched",
+  "progress_sort_least_watched": "Least watched",
+  "progress_sort_episodes_left": "Episodes left",
+  "progress_intro_collection": "How complete your library is for every show you have episodes of.",
+  "progress_intro_watched": "How far you are through every show you've started watching.",
+  "progress_hide_complete": [
+    {
+      "declarations": [
+        "input view"
+      ],
+      "selectors": [
+        "view"
+      ],
+      "match": {
+        "view=collection": "Hide 100% collected",
+        "view=*": "Hide 100% watched"
+      }
+    }
+  ],
+  "progress_load_failed": "Couldn't load your progress.",
+  "progress_empty_collection": "No shows in your library yet.",
+  "progress_empty_watched": "Nothing started yet.",
+  "progress_empty_collection_hint": "Add a show to your collection and it'll show up here.",
+  "progress_empty_watched_hint": "Watch an episode of a show and it'll show up here.",
+  "progress_meta_missing": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} missing",
+        "countPlural=other": "{count} missing",
+        "countPlural=*": "{count} missing"
+      }
+    }
+  ],
+  "progress_meta_left": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} left",
+        "countPlural=other": "{count} left",
+        "countPlural=*": "{count} left"
+      }
+    }
+  ],
+  "progress_meta_complete": "complete",
+  "lists_my_lists": "My Lists",
+  "lists_new_list": "New List",
+  "lists_create_new": "Create New List",
+  "lists_name": "Name",
+  "lists_name_placeholder": "My Watchlist",
+  "lists_description_label": "Description <span class=\"text-zinc-400 normal-case font-normal tracking-normal\">(optional)</span>",
+  "lists_description_placeholder": "What's this list about?",
+  "privacy_label": "Privacy",
+  "privacy_private_short": "Private",
+  "privacy_friends_short": "Friends",
+  "privacy_public_short": "Public",
+  "lists_create_list": "Create List",
+  "lists_empty": "No lists yet",
+  "lists_empty_hint": "Create your first list to start organising movies and shows.",
+  "lists_create_a_list": "Create a List",
+  "lists_delete": "Delete list",
+  "lists_from_community": "From the Community",
+  "lists_public_lists": "Public Lists",
+  "lists_no_public": "No public lists yet",
+  "lists_no_public_hint": "Check back later, or sign in to see your own.",
+  "common_creating": "Creating...",
+  "lists_create_failed": "Failed to create list",
+  "common_delete_named_confirm": "Delete \"{name}\"?",
+  "list_private": "This list is private.",
+  "list_not_found": "List not found.",
+  "list_page_title_fallback": "List",
+  "list_back_to_lists": "Back to Lists",
+  "common_edit": "Edit",
+  "common_delete": "Delete",
+  "list_edit": "Edit List",
+  "common_description": "Description",
+  "common_save_changes": "Save Changes",
+  "list_arr_import_title": "Import into Radarr / Sonarr",
+  "list_arr_import_help": "In Radarr / Sonarr → Settings → Import Lists → Add → choose <strong class=\"text-zinc-300\">Radarr</strong> or <strong class=\"text-zinc-300\">Sonarr</strong> as the list type. Paste the URL below as the <strong class=\"text-zinc-300\">Base URL</strong> and your Scrob API key (from <a href=\"/settings\" class=\"text-blue-400 hover:underline\">Settings</a>) as the <strong class=\"text-zinc-300\">API Key</strong>.",
+  "list_arr_radarr_movies": "Radarr — movies",
+  "list_arr_sonarr_shows": "Sonarr — shows",
+  "common_copy": "Copy",
+  "common_copied": "Copied!",
+  "list_add_items": "Add Items",
+  "list_search_placeholder": "Search for a movie, show, or person to add...",
+  "common_searching": "Searching…",
+  "common_no_results_found": "No results found.",
+  "list_items": "Items",
+  "list_empty_owner": "This list is empty. Search above to add movies and shows.",
+  "list_empty": "This list is empty.",
+  "list_remove_item": "Remove from list",
+  "list_filter_empty": "No items match this filter.",
+  "list_other_lists": "Your Other Lists",
+  "list_update_failed": "Failed to update list",
+  "list_delete_fallback_title": "this list",
+  "list_item_fallback_title": "this item",
+  "list_remove_confirm_title": "Remove \"{title}\"?",
+  "list_remove_confirm_body": "This removes it from this list.",
+  "list_add": "Add",
+  "list_already_in_list": "Already in list",
+  "list_add_failed": "Failed to add item",
+  "list_added": "Added!",
+  "profile_private": "This profile is private.",
+  "profile_not_found": "User not found.",
+  "profile_load_failed": "Failed to load profile.",
+  "common_unknown": "Unknown",
+  "profile_comment_season": "{title} — Season {season}",
+  "time_ago_minutes": "{count}m ago",
+  "time_ago_hours": "{count}h ago",
+  "time_ago_days": "{count}d ago",
+  "time_ago_months": "{count}mo ago",
+  "time_ago_years": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count}y ago",
+        "countPlural=other": "{count}y ago",
+        "countPlural=*": "{count}y ago"
+      }
+    }
+  ],
+  "profile_page_title": "{name}'s Profile",
+  "profile_access_restricted": "Access Restricted",
+  "common_return_home": "Return Home",
+  "profile_edit": "Edit Profile",
+  "profile_joined": "Joined {date}",
+  "profile_movies_watched": "Movies Watched",
+  "profile_shows_watched": "Shows Watched",
+  "profile_items_collected": "Items Collected",
+  "profile_items_rated": "Items Rated",
+  "profile_view_statistics": "View Statistics",
+  "section_recently_watched_movies": "Recently Watched Movies",
+  "section_recently_watched_shows": "Recently Watched Shows",
+  "section_top_rated_movies": "Top Rated Movies",
+  "section_top_rated_shows": "Top Rated Shows",
+  "profile_recent_comments": "Recent Comments",
+  "profile_no_activity": "No activity to display yet.",
+  "profile_about": "About",
+  "profile_no_bio": "No bio yet.",
+  "profile_favorite_genres": "Favorite Genres",
+  "profile_following": "Following",
+  "profile_followers": "Followers",
+  "profile_request_failed": "Request failed",
+  "top_rated_movies_load_failed": "Failed to load top rated movies.",
+  "top_rated_shows_load_failed": "Failed to load top rated shows.",
+  "recently_watched_movies_load_failed": "Failed to load recently watched movies.",
+  "recently_watched_shows_load_failed": "Failed to load recently watched shows.",
+  "top_rated_movies_empty": "No rated movies yet.",
+  "top_rated_shows_empty": "No rated shows yet.",
+  "recently_watched_movies_empty": "No watched movies yet.",
+  "recently_watched_shows_empty": "No watched shows yet.",
+  "requests_title": "Media Requests",
+  "requests_summary": "{pending} pending · {approved} approved · {rejected} rejected",
+  "requests_awaiting": "Awaiting Approval ({count})",
+  "requests_none_pending": "No pending requests.",
+  "requests_requested_by": "{type} · requested by {user}",
+  "requests_approve": "Approve",
+  "requests_reject": "Reject",
+  "requests_approved_count": "Approved ({count})",
+  "requests_none_approved": "No approved requests.",
+  "requests_approved": "Approved",
+  "requests_rejected_count": "Rejected ({count})",
+  "requests_none_rejected": "No rejected requests.",
+  "requests_rejected": "Rejected",
+  "common_failed": "Failed",
+  "requests_approved_toast": "Request approved and sent to Radarr/Sonarr.",
+  "requests_approve_failed": "Failed to approve",
+  "requests_rejected_toast": "Request rejected.",
+  "requests_reject_failed": "Failed to reject",
+  "stats_watching": "Watching",
+  "stats_period_all": "All time",
+  "stats_period_year": "This year",
+  "stats_period_month": "This month",
+  "stats_period_week": "This week",
+  "stats_period_last365": "Last 365 days",
+  "stats_period_last30": "Last 30 days",
+  "stats_period_last7": "Last 7 days",
+  "stats_activity_over_time": "Activity Over Time",
+  "stats_most_watched_genres": "Most Watched Genres",
+  "stats_watch_time_over_time": "Watch Time Over Time",
+  "stats_watch_time": "Watch Time",
+  "stats_average_ratings": "Average Ratings",
+  "stats_rating_distribution": "Rating Distribution",
+  "stats_avg_by_weekday": "Average Activity by Day of Week",
+  "stats_by_weekday": "Activity by Day of Week",
+  "stats_most_watched": "Most Watched",
+  "stats_most_played_shows": "Most Played Shows",
+  "stats_most_played_movies": "Most Played Movies",
+  "stats_favourite_networks": "Favourite Networks",
+  "stats_most_watched_actors": "Most Watched Actors",
+  "stats_favourite_directors": "Favourite Directors",
+  "stats_favourite_writers": "Favourite Writers",
+  "stats_favourite_studios": "Favourite Studios",
+  "stats_collection": "Collection",
+  "stats_breakdown": "Breakdown",
+  "stats_watched_vs_unwatched": "Watched vs Unwatched",
+  "stats_days_short": "{value}d",
+  "stats_hours_short": "{value}h",
+  "stats_episodes_watched": "Episodes Watched",
+  "stats_bar_label_day": "{month}. {day}, {year}",
+  "stats_bar_label_month": "{month}. {year}",
+  "stats_bar_info_counts": "{label}: {movies} Movies, {episodes} Episodes",
+  "stats_chart_movies": "Movies",
+  "stats_chart_episodes": "Episodes",
+  "stats_no_history_period": "No watch history for the selected period.",
+  "stats_watch_time_tooltip": "{label}: {total} total · {movies} movies · {shows} shows",
+  "stats_no_watch_time_period": "No watch time data for the selected period.",
+  "stats_no_ratings_period": "No ratings for the selected period.",
+  "stats_no_data": "No data",
+  "stats_no_ratings": "No ratings",
+  "stats_weekday_tooltip": "{day}: avg {avg} items/week",
+  "stats_movies_collected": "Movies Collected",
+  "stats_shows_collected": "Shows Collected",
+  "stats_episodes_collected": "Episodes Collected",
+  "stats_movies_vs_shows": "Movies vs Shows",
+  "stats_movies_watched": "Movies Watched",
+  "stats_shows_watched": "Shows Watched",
+  "stats_watched": "Watched",
+  "stats_unwatched": "Unwatched",
+  "stats_plays": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} play",
+        "countPlural=other": "{count} plays",
+        "countPlural=*": "{count} plays"
+      }
+    }
+  ],
+  "stats_titles": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} title",
+        "countPlural=other": "{count} titles",
+        "countPlural=*": "{count} titles"
+      }
+    }
+  ]
 }
