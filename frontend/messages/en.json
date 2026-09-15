@@ -201,5 +201,215 @@
   "about_credits_intro": "Scrob connects to the following third-party services through their publicly documented APIs. It is an independent project and is not affiliated with, endorsed by, or certified by any of them.",
   "about_built_with": "Built with Astro, FastAPI, and PostgreSQL.",
   "about_tmdb_notice": "This product uses the TMDB API but is not endorsed or certified by {tmdb}. Metadata is also provided by {tvdb}.",
-  "about_trademarks": "All product names, logos, brands, and trademarks shown in Scrob are the property of their respective owners and are used only to identify the services Scrob interoperates with. Their use does not imply any affiliation with or endorsement by them."
+  "about_trademarks": "All product names, logos, brands, and trademarks shown in Scrob are the property of their respective owners and are used only to identify the services Scrob interoperates with. Their use does not imply any affiliation with or endorsement by them.",
+  "card_watched": "Watched",
+  "card_lists": "Lists",
+  "card_collected": "Collected",
+  "collection_pct_in_library": "{pct}% in library",
+  "collection_remove": "Remove from collection",
+  "media_season_number": "Season {number}",
+  "common_person": "Person",
+  "common_collection": "Collection",
+  "common_episode": "Episode",
+  "episode_card_unidentified": "Could not identify — try pulling your library",
+  "rewatch_label": "Rewatch",
+  "rewatch_active_title": "Rewatching - {watched}/{total} watched this cycle. Click for options.",
+  "rewatch_start": "Start a rewatch",
+  "request_awaiting_approval": "Awaiting admin approval",
+  "request_rejected": "Request rejected",
+  "request_on_sonarr": "Request on Sonarr",
+  "request_on_radarr": "Request on Radarr",
+  "drop_dropped_title": "Dropped - click for options",
+  "drop_options_title": "Click for hide/drop options",
+  "drop_dropped": "Dropped",
+  "continue_watching_remove": "Remove from continue watching",
+  "sort_by": "Sort By",
+  "common_see_all": "See All",
+  "common_nothing_here_yet": "Nothing here yet.",
+  "tvdb_attribution": "Metadata provided by {link}. Please add missing information or corrections there.",
+  "studio_kind": [
+    {
+      "declarations": [
+        "input kind"
+      ],
+      "selectors": [
+        "kind"
+      ],
+      "match": {
+        "kind=network": "Network",
+        "kind=studio": "Studio",
+        "kind=*": "Studio"
+      }
+    }
+  ],
+  "common_tmdb_token_required": "TMDB Read Access Token Required",
+  "studio_tmdb_required_body": [
+    {
+      "declarations": [
+        "input kind"
+      ],
+      "selectors": [
+        "kind"
+      ],
+      "match": {
+        "kind=network": "To browse a network's catalogue from The Movie Database, add your TMDB Read Access Token in settings.",
+        "kind=*": "To browse a studio's catalogue from The Movie Database, add your TMDB Read Access Token in settings."
+      }
+    }
+  ],
+  "common_go_to_settings": "Go to Settings",
+  "studio_no_titles": "Nothing here — no titles match.",
+  "list_item_count": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} item",
+        "countPlural=other": "{count} items"
+      }
+    }
+  ],
+  "list_by_user": "by {username}",
+  "history_time_unknown": "Unknown",
+  "history_delete_entry_title": "Delete this entry",
+  "history_delete_entry_label": "Delete history entry",
+  "history_delete_fallback_title": "this entry",
+  "history_delete_confirm_title": "Delete \"{title}\"?",
+  "history_delete_confirm_body": "This removes it from your watch history. This cannot be undone.",
+  "episode_count": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} episode",
+        "countPlural=other": "{count} episodes"
+      }
+    }
+  ],
+  "pagination_label": "Pagination",
+  "pagination_previous": "Previous page",
+  "pagination_next": "Next page",
+  "pagination_page": "Page {page}",
+  "pagination_go_to_page": "Go to page",
+  "pagination_of_total": "of {total}",
+  "sync_active_title": "Active Sync",
+  "sync_abort_all": "Abort All",
+  "sync_abort_confirm": "Are you sure you want to abort all active sync jobs?",
+  "sync_aborting": "ABORTING...",
+  "sync_abort_all_upper": "ABORT ALL",
+  "sync_job_status": [
+    {
+      "declarations": [
+        "input status"
+      ],
+      "selectors": [
+        "status"
+      ],
+      "match": {
+        "status=running": "running",
+        "status=pending": "pending",
+        "status=failed": "Failed",
+        "status=completed": "completed",
+        "status=*": "{status}"
+      }
+    }
+  ],
+  "sync_job_title": "{source} Sync",
+  "common_unknown_error": "Unknown error",
+  "sync_job_items_progress": "{processed} / {total} items",
+  "filters_title": "Filters",
+  "filters_clear": "Clear filters",
+  "filters_clear_all": "Clear all",
+  "filters_apply": "Apply Filters",
+  "filters_no_years": "No years available",
+  "episode_order_title": "Episode order",
+  "episode_order_description": "Choose how this show's episodes are grouped and numbered.",
+  "episode_order_metadata_source": "Metadata source",
+  "episode_order_show_all": "Show all orderings",
+  "episode_order_aired": "Aired Order",
+  "episode_order_building": "Building order…",
+  "episode_order_progress": "{processed} / {total} episodes",
+  "common_queued": "Queued…",
+  "episode_order_check_failed": "Unable to check episode order progress",
+  "episode_order_update_failed": "Unable to update episode order",
+  "manual_start_session": "Start watching session",
+  "manual_watching": "Watching",
+  "manual_pause": "Pause",
+  "manual_resume": "Resume",
+  "manual_stop": "Stop",
+  "manual_starting": "Starting session…",
+  "player_play": "Play",
+  "player_failed": "Playback failed",
+  "player_enable_hls": "Enable HLS Player in Settings",
+  "player_subtitle": "Subtitle",
+  "player_hls_decode_error": "Your browser cannot decode this media format. Try a different source.",
+  "player_hls_load_error": "Failed to load the HLS stream. The server may be unreachable.",
+  "player_decode_error_hls": "Your browser cannot decode this media format. Try a different source or check your browser's codec support.",
+  "player_codec_unsupported": "Your browser may not support the codec used by this file.",
+  "player_codec_combination": "Your browser cannot play this codec combination.",
+  "player_no_source": "No playback source found.",
+  "player_loading_sources": "Loading sources…",
+  "player_sources_failed": "Failed to load sources.",
+  "auth_hero_headline": "Track <span class=\"hero-gradient-text text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600\">everything</span> you watch.",
+  "auth_hero_lead": "Scrob is your private, self-hosted home for movies and TV. Sync your media servers, keep your watch history, rate and review, and always know what to watch next.",
+  "auth_feature_sync_title": "Syncs with your servers",
+  "auth_feature_sync_body": "Jellyfin, Plex, Emby, Kodi and more - in and out.",
+  "auth_feature_history_title": "Complete watch history",
+  "auth_feature_history_body": "Every movie, episode and rewatch, with ratings and reviews.",
+  "auth_feature_lists_title": "Lists and collections",
+  "auth_feature_lists_body": "Watchlists, custom lists and lists shared by the community.",
+  "auth_feature_discover_title": "Discover and stats",
+  "auth_feature_discover_body": "Trending titles, personal recommendations and your viewing stats.",
+  "auth_open_source": "Open source and self-hosted.",
+  "auth_mobile_sync": "Syncs Jellyfin, Plex & Emby",
+  "auth_mobile_history": "Full watch history",
+  "auth_mobile_lists": "Ratings & lists",
+  "auth_mobile_discover": "Discover & stats",
+  "comments_title": "Comments",
+  "comments_placeholder": "What are your thoughts?",
+  "comments_mark_spoiler": "Mark as spoiler",
+  "comments_post": "Post Comment",
+  "comments_login_prompt": "Please {login} to leave a comment.",
+  "comments_login_link": "log in",
+  "comments_empty": "No comments yet. Be the first to share your thoughts!",
+  "comments_spoiler": "Spoiler",
+  "comments_edit": "Edit Comment",
+  "comments_delete": "Delete Comment",
+  "comments_click_to_reveal": "Click to reveal",
+  "common_save": "Save",
+  "comments_posting": "Posting...",
+  "comments_post_failed": "Failed to post comment",
+  "comments_save_failed": "Failed to save comment",
+  "comments_delete_confirm_title": "Delete comment?",
+  "common_cannot_be_undone": "This cannot be undone.",
+  "comments_delete_failed": "Failed to delete comment",
+  "episodes_left": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} episode left",
+        "countPlural=other": "{count} episodes left"
+      }
+    }
+  ],
+  "duration_hours_minutes": "{hours}h {minutes}m",
+  "duration_hours": "{hours}h",
+  "duration_minutes": "{minutes}m",
+  "season_specials": "Specials"
 }

@@ -201,5 +201,215 @@
   "about_credits_intro": "Scrob se connecte aux services tiers suivants via leurs API publiquement documentées. C’est un projet indépendant, qui n’est ni affilié à ces services, ni approuvé ou certifié par eux.",
   "about_built_with": "Réalisé avec Astro, FastAPI et PostgreSQL.",
   "about_tmdb_notice": "Ce produit utilise l’API TMDB mais n’est ni approuvé ni certifié par {tmdb}. Des métadonnées sont également fournies par {tvdb}.",
-  "about_trademarks": "Tous les noms de produits, logos, marques et marques déposées affichés dans Scrob appartiennent à leurs propriétaires respectifs et ne servent qu’à identifier les services avec lesquels Scrob fonctionne. Leur utilisation n’implique aucune affiliation avec eux ni approbation de leur part."
+  "about_trademarks": "Tous les noms de produits, logos, marques et marques déposées affichés dans Scrob appartiennent à leurs propriétaires respectifs et ne servent qu’à identifier les services avec lesquels Scrob fonctionne. Leur utilisation n’implique aucune affiliation avec eux ni approbation de leur part.",
+  "card_watched": "Vu",
+  "card_lists": "Listes",
+  "card_collected": "Collection",
+  "collection_pct_in_library": "{pct} % dans la bibliothèque",
+  "collection_remove": "Retirer de la collection",
+  "media_season_number": "Saison {number}",
+  "common_person": "Personne",
+  "common_collection": "Collection",
+  "common_episode": "Épisode",
+  "episode_card_unidentified": "Non identifié — essayez de resynchroniser votre bibliothèque",
+  "rewatch_label": "Revoir",
+  "rewatch_active_title": "Revisionnage en cours - {watched}/{total} vus ce cycle. Cliquez pour les options.",
+  "rewatch_start": "Commencer un revisionnage",
+  "request_awaiting_approval": "En attente de validation par un administrateur",
+  "request_rejected": "Demande refusée",
+  "request_on_sonarr": "Demander sur Sonarr",
+  "request_on_radarr": "Demander sur Radarr",
+  "drop_dropped_title": "Abandonné - cliquez pour les options",
+  "drop_options_title": "Cliquez pour masquer ou abandonner",
+  "drop_dropped": "Abandonné",
+  "continue_watching_remove": "Retirer de « Reprendre la lecture »",
+  "sort_by": "Trier par",
+  "common_see_all": "Tout voir",
+  "common_nothing_here_yet": "Rien pour le moment.",
+  "tvdb_attribution": "Métadonnées fournies par {link}. Merci d’y ajouter les informations manquantes ou les corrections.",
+  "studio_kind": [
+    {
+      "declarations": [
+        "input kind"
+      ],
+      "selectors": [
+        "kind"
+      ],
+      "match": {
+        "kind=network": "Chaîne",
+        "kind=studio": "Studio",
+        "kind=*": "Studio"
+      }
+    }
+  ],
+  "common_tmdb_token_required": "Jeton d’accès en lecture TMDB requis",
+  "studio_tmdb_required_body": [
+    {
+      "declarations": [
+        "input kind"
+      ],
+      "selectors": [
+        "kind"
+      ],
+      "match": {
+        "kind=network": "Pour parcourir le catalogue d’une chaîne depuis The Movie Database, ajoutez votre jeton d’accès en lecture TMDB dans les paramètres.",
+        "kind=*": "Pour parcourir le catalogue d’un studio depuis The Movie Database, ajoutez votre jeton d’accès en lecture TMDB dans les paramètres."
+      }
+    }
+  ],
+  "common_go_to_settings": "Aller aux paramètres",
+  "studio_no_titles": "Rien ici — aucun titre ne correspond.",
+  "list_item_count": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} élément",
+        "countPlural=other": "{count} éléments"
+      }
+    }
+  ],
+  "list_by_user": "par {username}",
+  "history_time_unknown": "Inconnue",
+  "history_delete_entry_title": "Supprimer cette entrée",
+  "history_delete_entry_label": "Supprimer l’entrée de l’historique",
+  "history_delete_fallback_title": "cette entrée",
+  "history_delete_confirm_title": "Supprimer « {title} » ?",
+  "history_delete_confirm_body": "L’entrée sera retirée de votre historique de visionnage. Cette action est irréversible.",
+  "episode_count": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} épisode",
+        "countPlural=other": "{count} épisodes"
+      }
+    }
+  ],
+  "pagination_label": "Pagination",
+  "pagination_previous": "Page précédente",
+  "pagination_next": "Page suivante",
+  "pagination_page": "Page {page}",
+  "pagination_go_to_page": "Aller à la page",
+  "pagination_of_total": "sur {total}",
+  "sync_active_title": "Synchronisation en cours",
+  "sync_abort_all": "Tout interrompre",
+  "sync_abort_confirm": "Voulez-vous vraiment interrompre toutes les synchronisations en cours ?",
+  "sync_aborting": "INTERRUPTION…",
+  "sync_abort_all_upper": "TOUT INTERROMPRE",
+  "sync_job_status": [
+    {
+      "declarations": [
+        "input status"
+      ],
+      "selectors": [
+        "status"
+      ],
+      "match": {
+        "status=running": "en cours",
+        "status=pending": "en attente",
+        "status=failed": "Échec",
+        "status=completed": "terminée",
+        "status=*": "{status}"
+      }
+    }
+  ],
+  "sync_job_title": "Synchro {source}",
+  "common_unknown_error": "Erreur inconnue",
+  "sync_job_items_progress": "{processed} / {total} éléments",
+  "filters_title": "Filtres",
+  "filters_clear": "Effacer les filtres",
+  "filters_clear_all": "Tout effacer",
+  "filters_apply": "Appliquer les filtres",
+  "filters_no_years": "Aucune année disponible",
+  "episode_order_title": "Ordre des épisodes",
+  "episode_order_description": "Choisissez comment les épisodes de cette série sont regroupés et numérotés.",
+  "episode_order_metadata_source": "Source des métadonnées",
+  "episode_order_show_all": "Afficher tous les ordres",
+  "episode_order_aired": "Ordre de diffusion",
+  "episode_order_building": "Construction de l’ordre…",
+  "episode_order_progress": "{processed} / {total} épisodes",
+  "common_queued": "En file d’attente…",
+  "episode_order_check_failed": "Impossible de vérifier la progression de l’ordre des épisodes",
+  "episode_order_update_failed": "Impossible de modifier l’ordre des épisodes",
+  "manual_start_session": "Démarrer une session de visionnage",
+  "manual_watching": "En cours",
+  "manual_pause": "Pause",
+  "manual_resume": "Reprendre",
+  "manual_stop": "Arrêter",
+  "manual_starting": "Démarrage de la session…",
+  "player_play": "Lire",
+  "player_failed": "Échec de la lecture",
+  "player_enable_hls": "Activer le lecteur HLS dans les paramètres",
+  "player_subtitle": "Sous-titres",
+  "player_hls_decode_error": "Votre navigateur ne peut pas décoder ce format. Essayez une autre source.",
+  "player_hls_load_error": "Impossible de charger le flux HLS. Le serveur est peut-être injoignable.",
+  "player_decode_error_hls": "Votre navigateur ne peut pas décoder ce format. Essayez une autre source ou vérifiez les codecs pris en charge par votre navigateur.",
+  "player_codec_unsupported": "Votre navigateur ne prend peut-être pas en charge le codec de ce fichier.",
+  "player_codec_combination": "Votre navigateur ne peut pas lire cette combinaison de codecs.",
+  "player_no_source": "Aucune source de lecture trouvée.",
+  "player_loading_sources": "Chargement des sources…",
+  "player_sources_failed": "Impossible de charger les sources.",
+  "auth_hero_headline": "Suivez <span class=\"hero-gradient-text text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600\">tout</span> ce que vous regardez.",
+  "auth_hero_lead": "Scrob est votre espace privé et auto-hébergé pour les films et les séries. Synchronisez vos serveurs multimédias, gardez votre historique de visionnage, notez, critiquez, et sachez toujours quoi regarder ensuite.",
+  "auth_feature_sync_title": "Synchronisé avec vos serveurs",
+  "auth_feature_sync_body": "Jellyfin, Plex, Emby, Kodi et d’autres - dans les deux sens.",
+  "auth_feature_history_title": "Historique de visionnage complet",
+  "auth_feature_history_body": "Chaque film, épisode et revisionnage, avec notes et critiques.",
+  "auth_feature_lists_title": "Listes et collections",
+  "auth_feature_lists_body": "Listes à voir, listes personnalisées et listes partagées par la communauté.",
+  "auth_feature_discover_title": "Découverte et statistiques",
+  "auth_feature_discover_body": "Titres tendance, recommandations personnalisées et statistiques de visionnage.",
+  "auth_open_source": "Libre et auto-hébergé.",
+  "auth_mobile_sync": "Synchro Jellyfin, Plex et Emby",
+  "auth_mobile_history": "Historique complet",
+  "auth_mobile_lists": "Notes et listes",
+  "auth_mobile_discover": "Découverte et stats",
+  "comments_title": "Commentaires",
+  "comments_placeholder": "Qu’en avez-vous pensé ?",
+  "comments_mark_spoiler": "Marquer comme spoiler",
+  "comments_post": "Publier",
+  "comments_login_prompt": "Veuillez {login} pour laisser un commentaire.",
+  "comments_login_link": "vous connecter",
+  "comments_empty": "Aucun commentaire pour le moment. Donnez votre avis en premier !",
+  "comments_spoiler": "Spoiler",
+  "comments_edit": "Modifier le commentaire",
+  "comments_delete": "Supprimer le commentaire",
+  "comments_click_to_reveal": "Cliquez pour afficher",
+  "common_save": "Enregistrer",
+  "comments_posting": "Publication…",
+  "comments_post_failed": "Impossible de publier le commentaire",
+  "comments_save_failed": "Impossible d’enregistrer le commentaire",
+  "comments_delete_confirm_title": "Supprimer le commentaire ?",
+  "common_cannot_be_undone": "Cette action est irréversible.",
+  "comments_delete_failed": "Impossible de supprimer le commentaire",
+  "episodes_left": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} épisode restant",
+        "countPlural=other": "{count} épisodes restants"
+      }
+    }
+  ],
+  "duration_hours_minutes": "{hours} h {minutes} min",
+  "duration_hours": "{hours} h",
+  "duration_minutes": "{minutes} min",
+  "season_specials": "Épisodes spéciaux"
 }
