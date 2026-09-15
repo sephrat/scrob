@@ -1,0 +1,7 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "settings_ui_language_title": "Langue de l’interface",
+  "settings_ui_language_description": "Langue des menus, boutons et messages. Les titres et résumés suivent la langue des métadonnées définie dans votre profil.",
+  "settings_ui_language_auto": "Automatique (navigateur)",
+  "settings_ui_language_save_failed": "Impossible d’enregistrer la langue de l’interface."
+}

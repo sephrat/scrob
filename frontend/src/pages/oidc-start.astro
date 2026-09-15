@@ -1,5 +1,6 @@
 ---
 import { api } from "../lib/api";
+import { getLocale } from "../paraglide/runtime.js";
 
 // Initiate the OIDC flow: get the provider's auth URL + a fresh state token from
 // the backend, set the state as an httpOnly cookie on the browser, then redirect
@@ -37,7 +38,7 @@ try {
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={getLocale()}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

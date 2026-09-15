@@ -3,6 +3,9 @@ from typing import Optional
 from datetime import datetime
 from models.base import UserRole, MediaType, PrivacyLevel
 
+# Keep in sync with "locales" in frontend/project.inlang/settings.json.
+SUPPORTED_UI_LANGUAGES = ("en", "fr")
+
 class UserBase(BaseModel):
     email: EmailStr
     username: str
@@ -214,6 +217,16 @@ class UserSettings(BaseModel):
     rate_prompt_movies: Optional[bool] = None
     rate_prompt_episodes: Optional[bool] = None
     duplicate_watch_window_minutes: Optional[int] = Field(default=None, ge=0)
+    ui_language: Optional[str] = None
+
+    @field_validator("ui_language")
+    @classmethod
+    def validate_ui_language(cls, value):
+        # Only languages the frontend actually ships messages for - an unknown
+        # code would be written to the cookie and silently fall back to English.
+        if value is not None and value not in SUPPORTED_UI_LANGUAGES:
+            raise ValueError(f"Unsupported UI language: {value}")
+        return value
 
     @field_validator("rpdb_api_key", mode="before")
     @classmethod

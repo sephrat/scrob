@@ -1,5 +1,22 @@
 import { defineMiddleware } from "astro:middleware";
 import { api } from "./lib/api";
+import { paraglideMiddleware } from "./paraglide/server.js";
+import { cookieMaxAge, cookieName, isLocale } from "./paraglide/runtime.js";
+
+// A copy of the request whose Cookie header carries `locale` as the language
+// cookie, so Paraglide's cookie strategy picks it up on this request already.
+// Only used for locale detection (next() still gets the original request), so
+// it copies URL and headers but never the body: new Request(request) would take
+// over the original body stream and break POST handlers.
+function withLocaleCookie(request: Request, locale: string): Request {
+  const others = (request.headers.get("cookie") ?? "")
+    .split(";")
+    .map(c => c.trim())
+    .filter(c => c && !c.startsWith(`${cookieName}=`));
+  const headers = new Headers(request.headers);
+  headers.set("cookie", [...others, `${cookieName}=${locale}`].join("; "));
+  return new Request(request.url, { headers });
+}
 
 const PUBLIC_ROUTES = ["/login", "/register", "/logout", "/oidc-callback", "/oidc-start", "/link", "/site.webmanifest", "/favicon.ico", "/favicon.svg", "/apple-touch-icon.png", "/sw.js", "/offline.html"];
 // /api/proxy/auth/device/code and /device/token are the RFC 8628 endpoints a
@@ -152,7 +169,22 @@ export const onRequest = defineMiddleware(async (context, next) => {
     context.locals.hasRpdbKey = !!context.locals.settings?.has_rpdb_key;
   }
 
-  const response = await next();
+  // UI language. Paraglide resolves it from the ui_language cookie, then
+  // Accept-Language, then English, and keeps it per-request (AsyncLocalStorage)
+  // for every m.*() call made while rendering. The account preference
+  // (user_settings.ui_language) is the source of truth for signed-in users: a
+  // new device or browser has no cookie yet, so mirror it in here and render
+  // this very request in it instead of waiting for a visit to /settings. A null
+  // preference means "follow the browser" and leaves any cookie alone (e.g. one
+  // picked on the login page).
+  const accountLocale = context.locals.settings?.ui_language;
+  let localeRequest = context.request;
+  if (accountLocale && isLocale(accountLocale) && context.cookies.get(cookieName)?.value !== accountLocale) {
+    context.cookies.set(cookieName, accountLocale, { path: "/", sameSite: "lax", maxAge: cookieMaxAge });
+    localeRequest = withLocaleCookie(context.request, accountLocale);
+  }
+
+  const response = await paraglideMiddleware(localeRequest, () => next());
   for (const [header, value] of Object.entries(SECURITY_HEADERS)) {
     response.headers.set(header, value);
   }
