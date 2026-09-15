@@ -61,8 +61,21 @@
     <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
     <circle cx="12" cy="20" r="1" fill="currentColor"/>
   </svg>
-  <h1>You're offline</h1>
-  <p>Scrob needs a connection to load your library. Check your network and try again.</p>
-  <button onclick="window.location.reload()">Try again</button>
+  <h1 data-fr="Vous êtes hors ligne">You're offline</h1>
+  <p data-fr="Scrob a besoin d’une connexion pour charger votre bibliothèque. Vérifiez votre réseau et réessayez.">Scrob needs a connection to load your library. Check your network and try again.</p>
+  <button onclick="window.location.reload()" data-fr="Réessayer">Try again</button>
+  <script>
+    // Static page cached by the service worker, so it can't go through the
+    // app's i18n: pick the language the same way (ui_language cookie, then the
+    // browser) and swap in the translations carried in data-* attributes.
+    (function () {
+      var match = document.cookie.match(/(?:^|;\s*)ui_language=([^;]*)/);
+      var lang = match ? match[1] : (navigator.languages && navigator.languages[0] || navigator.language || 'en');
+      if (lang.slice(0, 2).toLowerCase() !== 'fr') return;
+      document.documentElement.lang = 'fr';
+      document.title = 'Hors ligne — Scrob';
+      document.querySelectorAll('[data-fr]').forEach(function (el) { el.textContent = el.getAttribute('data-fr'); });
+    })();
+  </script>
 </body>
 </html>

@@ -32,3 +32,16 @@ export function formatRelative(value: number, unit: Intl.RelativeTimeFormatUnit,
 export function formatList(items: string[], options?: Intl.ListFormatOptions): string {
   return new Intl.ListFormat(getLocale(), { style: "long", type: "conjunction", ...options }).format(items);
 }
+
+// For messages that carry inline markup (a link or <strong> around part of a
+// sentence, rendered with set:html): the markup lives in the message so
+// translators keep the sentence whole, and every interpolated value that isn't
+// trusted markup goes through this first.
+export function escapeHtml(value: unknown): string {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
