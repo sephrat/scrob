@@ -411,5 +411,373 @@
   "duration_hours_minutes": "{hours}h {minutes}m",
   "duration_hours": "{hours}h",
   "duration_minutes": "{minutes}m",
-  "season_specials": "Specials"
+  "season_specials": "Specials",
+  "home_page_title": "Dashboard",
+  "home_setup_title": "Finish setting up your account",
+  "home_setup_body": "To start using Scrob and explore movies and shows, you must add your TMDB Read Access Token.",
+  "section_trending_shows": "Trending Shows",
+  "section_trending_movies": "Trending Movies",
+  "section_next_up": "Next Up",
+  "section_continue_watching": "Continue Watching",
+  "section_recently_added_movies": "Recently Added Movies",
+  "section_recently_added_episodes": "Recently Added Episodes",
+  "section_airing_today": "Airing Today",
+  "home_episode_label": "S{season} E{episode}",
+  "home_discover_kicker": "What to watch next?",
+  "home_discover_headline": "Explore movies & shows<br class=\"hidden sm:block\" /> you haven't seen yet.",
+  "genre_action": "Action",
+  "genre_adventure": "Adventure",
+  "genre_action_adventure": "Action & Adventure",
+  "genre_animation": "Animation",
+  "genre_comedy": "Comedy",
+  "genre_crime": "Crime",
+  "genre_documentary": "Documentary",
+  "genre_drama": "Drama",
+  "genre_family": "Family",
+  "genre_fantasy": "Fantasy",
+  "genre_history": "History",
+  "genre_horror": "Horror",
+  "genre_kids": "Kids",
+  "genre_music": "Music",
+  "genre_mystery": "Mystery",
+  "genre_news": "News",
+  "genre_reality": "Reality",
+  "genre_romance": "Romance",
+  "genre_science_fiction": "Science Fiction",
+  "genre_scifi_fantasy": "Sci-Fi & Fantasy",
+  "genre_soap": "Soap",
+  "genre_talk": "Talk",
+  "genre_thriller": "Thriller",
+  "genre_tv_movie": "TV Movie",
+  "genre_war": "War",
+  "genre_war_politics": "War & Politics",
+  "genre_western": "Western",
+  "show_status_returning": "Returning Series",
+  "show_status_in_production": "In Production",
+  "show_status_planned": "Planned",
+  "show_status_ended": "Ended",
+  "show_status_canceled": "Canceled",
+  "show_status_pilot": "Pilot",
+  "explore_movies_title": "Explore Movies",
+  "explore_shows_title": "Explore Shows",
+  "explore_tab": "Explore",
+  "explore_my_collection": "My Collection",
+  "explore_category": "Category",
+  "explore_category_popular": "Popular",
+  "explore_category_top_rated": "Top Rated",
+  "explore_category_trending": "Trending",
+  "filter_genre": "Genre",
+  "filter_year": "Year",
+  "filter_rating": "Rating",
+  "filter_rating_min_stars": "{rating}+ Stars",
+  "filter_collection": "Collection",
+  "filter_in_my_collection": "In My Collection",
+  "filter_not_in_my_collection": "Not In My Collection",
+  "filter_watched": "Watched",
+  "filter_watched_option": "Watched",
+  "filter_unwatched_option": "Unwatched",
+  "filter_in_progress_option": "In Progress",
+  "filter_in_radarr": "In Radarr",
+  "filter_not_in_radarr": "Not In Radarr",
+  "filter_in_sonarr": "In Sonarr",
+  "filter_not_in_sonarr": "Not In Sonarr",
+  "filter_language": "Language",
+  "filter_lists": "Lists",
+  "filter_in_a_list": "In a List",
+  "filter_not_in_a_list": "Not In a List",
+  "filter_status": "Status",
+  "explore_tmdb_required_body": [
+    {
+      "declarations": [
+        "input type"
+      ],
+      "selectors": [
+        "type"
+      ],
+      "match": {
+        "type=movie": "To explore movies from The Movie Database, add your TMDB Read Access Token in settings.",
+        "type=*": "To explore shows from The Movie Database, add your TMDB Read Access Token in settings."
+      }
+    }
+  ],
+  "trending_page_title": [
+    {
+      "declarations": [
+        "input type"
+      ],
+      "selectors": [
+        "type"
+      ],
+      "match": {
+        "type=movie": "Trending Movies - Page {page}",
+        "type=*": "Trending Shows - Page {page}"
+      }
+    }
+  ],
+  "trending_movies_subtitle": "Popular movies right now on TMDB",
+  "trending_shows_subtitle": "Popular shows right now on TMDB",
+  "airing_today_page_title": "Airing Today - Page {page}",
+  "airing_today_subtitle": "TV shows with new episodes airing today",
+  "search_login_required": "Log in to search for users.",
+  "search_tab_all": "Movies & Shows",
+  "search_tab_episodes": "Episodes",
+  "search_tab_people": "People",
+  "search_tab_collections": "Collections",
+  "search_tab_networks": "Networks",
+  "search_tab_studios": "Studios",
+  "search_tab_users": "Users",
+  "search_prompt": [
+    {
+      "declarations": [
+        "input type"
+      ],
+      "selectors": [
+        "type"
+      ],
+      "match": {
+        "type=movie": "Type something in the search bar to find movies.",
+        "type=series": "Type something in the search bar to find shows.",
+        "type=episode": "Type something in the search bar to find episodes.",
+        "type=person": "Type something in the search bar to find people.",
+        "type=collection": "Type something in the search bar to find collections.",
+        "type=network": "Type something in the search bar to find networks.",
+        "type=studio": "Type something in the search bar to find studios.",
+        "type=user": "Type something in the search bar to find users.",
+        "type=*": "Type something in the search bar to find movies, shows, episodes, people, collections, or users."
+      }
+    }
+  ],
+  "search_page_title_query": "Search: {query}",
+  "search_results_for": "Search results for \"{query}\"",
+  "search_results_count": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} result found",
+        "countPlural=other": "{count} results found"
+      }
+    }
+  ],
+  "search_local_only": "Showing local results only. {link} for more.",
+  "search_add_tmdb_key": "Add TMDB Key",
+  "search_all_years": "All Years",
+  "common_clear": "Clear",
+  "search_no_users": "No users found for \"{query}\".",
+  "follow_following": "Following",
+  "follow_follow": "Follow",
+  "stat_movies": "Movies",
+  "stat_shows": "Shows",
+  "stat_rated": "Rated",
+  "stat_followers": "Followers",
+  "search_no_results": "No results found for \"{query}\".",
+  "discover_tmdb_required_body": "Add your TMDB Read Access Token in settings to unlock Discover.",
+  "discover_for_you": "For You",
+  "discover_for_you_hint": "Based on your favourite genres",
+  "discover_feeling_lucky": "Feeling lucky?",
+  "discover_pick_headline": "Let us pick something<br class=\"hidden sm:block\" /> for you to watch.",
+  "discover_now_playing": "Now Playing in Theaters",
+  "discover_trending_trailers": "Trending Trailers",
+  "discover_movies_genres": "Discover Movies",
+  "discover_genre_movies": "{genre} Movies",
+  "discover_see_all_arrow": "See all →",
+  "discover_coming_soon": "Coming Soon",
+  "discover_browse_by_network": "Browse by Network",
+  "discover_top_rated_movies": "Top Rated Movies",
+  "discover_personalise_kicker": "Personalise your experience",
+  "discover_personalise_body": "Add your region, genres and streaming services to unlock personalised recommendations.",
+  "discover_update_profile": "Update profile",
+  "discover_on_provider": "On {provider}",
+  "discover_provider_shows": "{provider} Shows",
+  "discover_tv_genres": "Discover TV Shows",
+  "discover_genre_shows": "{genre} Shows",
+  "discover_on_air_this_week": "On Air This Week",
+  "discover_top_rated_shows": "Top Rated Shows",
+  "discover_hidden_gems": "Hidden Gems",
+  "discover_hidden_gems_hint": "Critically acclaimed · under the radar",
+  "pick_phrase_elves": "Assembling Santa's elves…",
+  "pick_phrase_critics": "Arguing with the film critics…",
+  "pick_phrase_cinematic_universe": "Mapping the cinematic universe…",
+  "pick_phrase_stars": "Aligning the stars for you…",
+  "pick_phrase_pi": "Calculating the millionth digit of pi…",
+  "pick_phrase_lightning": "Harnessing the power of lightning…",
+  "common_refresh": "Refresh",
+  "calendar_loading": "Checking air dates for your shows… (first time can take a minute)",
+  "calendar_error": "Could not load the calendar.",
+  "calendar_footer": "The next 14 days for shows you're collecting or watching",
+  "common_today": "Today",
+  "common_tomorrow": "Tomorrow",
+  "common_yesterday": "Yesterday",
+  "calendar_badge_collected": "Collected",
+  "calendar_badge_watched": "Watched",
+  "common_tba": "TBA",
+  "calendar_computed_at": " · computed {date}",
+  "calendar_cached": " (cached, max 24h old)",
+  "calendar_empty": "No upcoming episodes found for your shows in the next 14 days.",
+  "person_enlarge_photo": "Enlarge photo of {name}",
+  "person_personal_info": "Personal Info",
+  "person_known_for": "Known For",
+  "person_birthday": "Birthday",
+  "person_place_of_birth": "Place of Birth",
+  "person_biography": "Biography",
+  "filter_rating_less_than_5": "Less than 5 Stars",
+  "person_no_matching_credits": "No matching credits found.",
+  "person_as_character": "as {character}",
+  "common_previous": "Previous",
+  "common_next": "Next",
+  "pagination_page_of": "Page {page} of {total}",
+  "recommendations_more_like_this": "More like this",
+  "network_page_title": "{name} — Network",
+  "studio_page_title": "{name} — Studio",
+  "network_unknown": "Unknown network",
+  "studio_unknown": "Unknown studio",
+  "collection_my_movies": "My Movies",
+  "collection_my_shows": "My Shows",
+  "common_total_count": "{count} total",
+  "sort_az": "A–Z",
+  "sort_top": "Top",
+  "sort_newest": "Newest",
+  "sort_recently_added": "Recently Added",
+  "sort_recently_watched": "Recently Watched",
+  "filter_progress": "Progress",
+  "filter_started": "Started",
+  "filter_not_started": "Not Started",
+  "collection_no_movies_match": "No movies match the selected filters",
+  "collection_no_shows_match": "No shows match the selected filters",
+  "collection_library_empty": "Your library is empty",
+  "collection_set_up_sync": "Set up Sync",
+  "common_oops": "Oops!",
+  "common_return_to_dashboard": "Return to Dashboard",
+  "common_back": "Back",
+  "common_enlarge_poster": "Enlarge poster for {title}",
+  "common_no_poster": "No Poster",
+  "tmdb_collection_film_count": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "Collection · {count} film",
+        "countPlural=other": "Collection · {count} films"
+      }
+    }
+  ],
+  "common_overview": "Overview",
+  "tmdb_collection_films": "Films in this Collection",
+  "common_top_cast": "Top Cast",
+  "tmdb_collection_appearances": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} film",
+        "countPlural=other": "{count} films"
+      }
+    }
+  ],
+  "media_details_title": "Media Details",
+  "common_no_poster_available": "No Poster Available",
+  "media_season_episode": "Season {season} · Episode {episode}",
+  "media_original_title": "Original title: {title}",
+  "media_runtime_minutes": "{minutes} min",
+  "credits_scene_both_title": "Has a mid-credits and a post-credits scene",
+  "credits_scene_mid_title": "Has a mid-credits scene",
+  "credits_scene_post_title": "Has a post-credits scene",
+  "media_more_from_studio": "More from {name}",
+  "media_play_count": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} Play",
+        "countPlural=other": "{count} Plays"
+      }
+    }
+  ],
+  "media_refresh_metadata": "Refresh Metadata",
+  "media_where_to_watch": "Where to Watch",
+  "media_release_schedule": "Release Schedule",
+  "media_release_theatrical": "Theatrical",
+  "media_release_digital": "Digital",
+  "media_release_physical": "Physical",
+  "media_refreshing": "Refreshing...",
+  "media_refresh_failed": "Refresh failed",
+  "common_done": "Done!",
+  "movie_status_released": "Released",
+  "movie_status_post_production": "Post Production",
+  "movie_status_in_production": "In Production",
+  "movie_status_planned": "Planned",
+  "movie_status_rumored": "Rumored",
+  "movie_status_canceled": "Canceled",
+  "show_details_title": "Show Details",
+  "season_details_title": "Season Details",
+  "episode_details_title": "Episode Details",
+  "page_title_pair": "{parent} - {child}",
+  "show_season_count": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} Season",
+        "countPlural=other": "{count} Seasons"
+      }
+    }
+  ],
+  "show_seasons": "Seasons",
+  "show_episodes": "Episodes",
+  "show_episode_count_label": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} Episodes",
+        "countPlural=other": "{count} Episodes"
+      }
+    }
+  ],
+  "show_no_overview": "No overview available.",
+  "media_episode_number": "Episode {number}",
+  "season_premiered": "Premiered {date}",
+  "season_overview": "Season Overview",
+  "episode_short_number": "EP {number}",
+  "episode_no_overview": "No overview available for this episode.",
+  "common_view_details": "View Details",
+  "media_runtime_minutes_upper": "{minutes} MIN",
+  "tvdb_episode_not_tracked_short": "Not tracked yet - this episode might exist on TMDB too, but hasn't been matched. Try \"Refresh Metadata\" above.",
+  "episode_enlarge_thumbnail_for": "Enlarge thumbnail for {title}",
+  "episode_enlarge_thumbnail": "Enlarge thumbnail",
+  "episode_no_thumbnail": "No Thumbnail",
+  "episode_guest_stars": "Guest Stars",
+  "tvdb_episode_not_tracked_title": "Not tracked yet",
+  "tvdb_episode_not_tracked_body": "This episode might exist on TMDB too, but hasn't been matched to its TVDB position yet, so it can't be marked watched, rated, or collected. Try \"Refresh Episode Matching\" below.",
+  "tvdb_refresh_episode_matching": "Refresh Episode Matching"
 }

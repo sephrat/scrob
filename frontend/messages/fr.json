@@ -411,5 +411,373 @@
   "duration_hours_minutes": "{hours} h {minutes} min",
   "duration_hours": "{hours} h",
   "duration_minutes": "{minutes} min",
-  "season_specials": "Épisodes spéciaux"
+  "season_specials": "Épisodes spéciaux",
+  "home_page_title": "Tableau de bord",
+  "home_setup_title": "Terminez la configuration de votre compte",
+  "home_setup_body": "Pour commencer à utiliser Scrob et explorer films et séries, vous devez ajouter votre jeton d’accès en lecture TMDB.",
+  "section_trending_shows": "Séries tendance",
+  "section_trending_movies": "Films tendance",
+  "section_next_up": "À suivre",
+  "section_continue_watching": "Reprendre la lecture",
+  "section_recently_added_movies": "Films ajoutés récemment",
+  "section_recently_added_episodes": "Épisodes ajoutés récemment",
+  "section_airing_today": "Diffusés aujourd’hui",
+  "home_episode_label": "S{season} E{episode}",
+  "home_discover_kicker": "Que regarder ensuite ?",
+  "home_discover_headline": "Explorez les films et séries<br class=\"hidden sm:block\" /> que vous n’avez pas encore vus.",
+  "genre_action": "Action",
+  "genre_adventure": "Aventure",
+  "genre_action_adventure": "Action & Aventure",
+  "genre_animation": "Animation",
+  "genre_comedy": "Comédie",
+  "genre_crime": "Crime",
+  "genre_documentary": "Documentaire",
+  "genre_drama": "Drame",
+  "genre_family": "Familial",
+  "genre_fantasy": "Fantastique",
+  "genre_history": "Histoire",
+  "genre_horror": "Horreur",
+  "genre_kids": "Enfants",
+  "genre_music": "Musique",
+  "genre_mystery": "Mystère",
+  "genre_news": "Actualités",
+  "genre_reality": "Téléréalité",
+  "genre_romance": "Romance",
+  "genre_science_fiction": "Science-fiction",
+  "genre_scifi_fantasy": "Science-fiction & Fantastique",
+  "genre_soap": "Feuilleton",
+  "genre_talk": "Talk-show",
+  "genre_thriller": "Thriller",
+  "genre_tv_movie": "Téléfilm",
+  "genre_war": "Guerre",
+  "genre_war_politics": "Guerre & Politique",
+  "genre_western": "Western",
+  "show_status_returning": "Série en cours",
+  "show_status_in_production": "En production",
+  "show_status_planned": "Prévue",
+  "show_status_ended": "Terminée",
+  "show_status_canceled": "Annulée",
+  "show_status_pilot": "Pilote",
+  "explore_movies_title": "Explorer les films",
+  "explore_shows_title": "Explorer les séries",
+  "explore_tab": "Explorer",
+  "explore_my_collection": "Ma collection",
+  "explore_category": "Catégorie",
+  "explore_category_popular": "Populaires",
+  "explore_category_top_rated": "Les mieux notés",
+  "explore_category_trending": "Tendances",
+  "filter_genre": "Genre",
+  "filter_year": "Année",
+  "filter_rating": "Note",
+  "filter_rating_min_stars": "{rating}+ étoiles",
+  "filter_collection": "Collection",
+  "filter_in_my_collection": "Dans ma collection",
+  "filter_not_in_my_collection": "Hors de ma collection",
+  "filter_watched": "Visionnage",
+  "filter_watched_option": "Vus",
+  "filter_unwatched_option": "Non vus",
+  "filter_in_progress_option": "En cours",
+  "filter_in_radarr": "Dans Radarr",
+  "filter_not_in_radarr": "Hors de Radarr",
+  "filter_in_sonarr": "Dans Sonarr",
+  "filter_not_in_sonarr": "Hors de Sonarr",
+  "filter_language": "Langue",
+  "filter_lists": "Listes",
+  "filter_in_a_list": "Dans une liste",
+  "filter_not_in_a_list": "Dans aucune liste",
+  "filter_status": "Statut",
+  "explore_tmdb_required_body": [
+    {
+      "declarations": [
+        "input type"
+      ],
+      "selectors": [
+        "type"
+      ],
+      "match": {
+        "type=movie": "Pour explorer les films de The Movie Database, ajoutez votre jeton d’accès en lecture TMDB dans les paramètres.",
+        "type=*": "Pour explorer les séries de The Movie Database, ajoutez votre jeton d’accès en lecture TMDB dans les paramètres."
+      }
+    }
+  ],
+  "trending_page_title": [
+    {
+      "declarations": [
+        "input type"
+      ],
+      "selectors": [
+        "type"
+      ],
+      "match": {
+        "type=movie": "Films tendance - Page {page}",
+        "type=*": "Séries tendance - Page {page}"
+      }
+    }
+  ],
+  "trending_movies_subtitle": "Les films populaires du moment sur TMDB",
+  "trending_shows_subtitle": "Les séries populaires du moment sur TMDB",
+  "airing_today_page_title": "Diffusés aujourd’hui - Page {page}",
+  "airing_today_subtitle": "Séries dont un nouvel épisode est diffusé aujourd’hui",
+  "search_login_required": "Connectez-vous pour rechercher des utilisateurs.",
+  "search_tab_all": "Films et séries",
+  "search_tab_episodes": "Épisodes",
+  "search_tab_people": "Personnes",
+  "search_tab_collections": "Collections",
+  "search_tab_networks": "Chaînes",
+  "search_tab_studios": "Studios",
+  "search_tab_users": "Utilisateurs",
+  "search_prompt": [
+    {
+      "declarations": [
+        "input type"
+      ],
+      "selectors": [
+        "type"
+      ],
+      "match": {
+        "type=movie": "Saisissez quelque chose dans la barre de recherche pour trouver des films.",
+        "type=series": "Saisissez quelque chose dans la barre de recherche pour trouver des séries.",
+        "type=episode": "Saisissez quelque chose dans la barre de recherche pour trouver des épisodes.",
+        "type=person": "Saisissez quelque chose dans la barre de recherche pour trouver des personnes.",
+        "type=collection": "Saisissez quelque chose dans la barre de recherche pour trouver des collections.",
+        "type=network": "Saisissez quelque chose dans la barre de recherche pour trouver des chaînes.",
+        "type=studio": "Saisissez quelque chose dans la barre de recherche pour trouver des studios.",
+        "type=user": "Saisissez quelque chose dans la barre de recherche pour trouver des utilisateurs.",
+        "type=*": "Saisissez quelque chose dans la barre de recherche pour trouver des films, séries, épisodes, personnes, collections ou utilisateurs."
+      }
+    }
+  ],
+  "search_page_title_query": "Recherche : {query}",
+  "search_results_for": "Résultats de recherche pour « {query} »",
+  "search_results_count": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} résultat trouvé",
+        "countPlural=other": "{count} résultats trouvés"
+      }
+    }
+  ],
+  "search_local_only": "Seuls les résultats locaux sont affichés. {link} pour en voir plus.",
+  "search_add_tmdb_key": "Ajoutez une clé TMDB",
+  "search_all_years": "Toutes les années",
+  "common_clear": "Effacer",
+  "search_no_users": "Aucun utilisateur trouvé pour « {query} ».",
+  "follow_following": "Abonné",
+  "follow_follow": "Suivre",
+  "stat_movies": "Films",
+  "stat_shows": "Séries",
+  "stat_rated": "Notés",
+  "stat_followers": "Abonnés",
+  "search_no_results": "Aucun résultat trouvé pour « {query} ».",
+  "discover_tmdb_required_body": "Ajoutez votre jeton d’accès en lecture TMDB dans les paramètres pour débloquer Découvrir.",
+  "discover_for_you": "Pour vous",
+  "discover_for_you_hint": "D’après vos genres préférés",
+  "discover_feeling_lucky": "Envie de hasard ?",
+  "discover_pick_headline": "Laissez-nous choisir<br class=\"hidden sm:block\" /> quoi regarder.",
+  "discover_now_playing": "Actuellement au cinéma",
+  "discover_trending_trailers": "Bandes-annonces tendance",
+  "discover_movies_genres": "Découvrir des films",
+  "discover_genre_movies": "Films · {genre}",
+  "discover_see_all_arrow": "Tout voir →",
+  "discover_coming_soon": "Prochainement",
+  "discover_browse_by_network": "Parcourir par chaîne",
+  "discover_top_rated_movies": "Films les mieux notés",
+  "discover_personalise_kicker": "Personnalisez votre expérience",
+  "discover_personalise_body": "Ajoutez votre région, vos genres et vos services de streaming pour obtenir des recommandations personnalisées.",
+  "discover_update_profile": "Mettre à jour le profil",
+  "discover_on_provider": "Sur {provider}",
+  "discover_provider_shows": "Séries {provider}",
+  "discover_tv_genres": "Découvrir des séries",
+  "discover_genre_shows": "Séries · {genre}",
+  "discover_on_air_this_week": "À l’antenne cette semaine",
+  "discover_top_rated_shows": "Séries les mieux notées",
+  "discover_hidden_gems": "Pépites méconnues",
+  "discover_hidden_gems_hint": "Saluées par la critique · passées inaperçues",
+  "pick_phrase_elves": "On rassemble les lutins du Père Noël…",
+  "pick_phrase_critics": "On se dispute avec les critiques de cinéma…",
+  "pick_phrase_cinematic_universe": "On cartographie l’univers cinématographique…",
+  "pick_phrase_stars": "On aligne les étoiles pour vous…",
+  "pick_phrase_pi": "On calcule la millionième décimale de pi…",
+  "pick_phrase_lightning": "On capte la puissance de la foudre…",
+  "common_refresh": "Actualiser",
+  "calendar_loading": "Vérification des dates de diffusion de vos séries… (la première fois peut prendre une minute)",
+  "calendar_error": "Impossible de charger le calendrier.",
+  "calendar_footer": "Les 14 prochains jours pour les séries que vous collectionnez ou regardez",
+  "common_today": "Aujourd’hui",
+  "common_tomorrow": "Demain",
+  "common_yesterday": "Hier",
+  "calendar_badge_collected": "Collection",
+  "calendar_badge_watched": "Vu",
+  "common_tba": "À venir",
+  "calendar_computed_at": " · calculé le {date}",
+  "calendar_cached": " (en cache, 24 h maximum)",
+  "calendar_empty": "Aucun épisode à venir pour vos séries dans les 14 prochains jours.",
+  "person_enlarge_photo": "Agrandir la photo de {name}",
+  "person_personal_info": "Informations personnelles",
+  "person_known_for": "Connu pour",
+  "person_birthday": "Date de naissance",
+  "person_place_of_birth": "Lieu de naissance",
+  "person_biography": "Biographie",
+  "filter_rating_less_than_5": "Moins de 5 étoiles",
+  "person_no_matching_credits": "Aucun rôle correspondant trouvé.",
+  "person_as_character": "dans le rôle de {character}",
+  "common_previous": "Précédent",
+  "common_next": "Suivant",
+  "pagination_page_of": "Page {page} sur {total}",
+  "recommendations_more_like_this": "Dans le même genre",
+  "network_page_title": "{name} — Chaîne",
+  "studio_page_title": "{name} — Studio",
+  "network_unknown": "Chaîne inconnue",
+  "studio_unknown": "Studio inconnu",
+  "collection_my_movies": "Mes films",
+  "collection_my_shows": "Mes séries",
+  "common_total_count": "{count} au total",
+  "sort_az": "A–Z",
+  "sort_top": "Mieux notés",
+  "sort_newest": "Plus récents",
+  "sort_recently_added": "Ajoutés récemment",
+  "sort_recently_watched": "Vus récemment",
+  "filter_progress": "Progression",
+  "filter_started": "Commencées",
+  "filter_not_started": "Pas commencées",
+  "collection_no_movies_match": "Aucun film ne correspond aux filtres sélectionnés",
+  "collection_no_shows_match": "Aucune série ne correspond aux filtres sélectionnés",
+  "collection_library_empty": "Votre bibliothèque est vide",
+  "collection_set_up_sync": "Configurer la synchronisation",
+  "common_oops": "Oups !",
+  "common_return_to_dashboard": "Retour au tableau de bord",
+  "common_back": "Retour",
+  "common_enlarge_poster": "Agrandir l’affiche de {title}",
+  "common_no_poster": "Pas d’affiche",
+  "tmdb_collection_film_count": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "Collection · {count} film",
+        "countPlural=other": "Collection · {count} films"
+      }
+    }
+  ],
+  "common_overview": "Synopsis",
+  "tmdb_collection_films": "Films de cette collection",
+  "common_top_cast": "Têtes d’affiche",
+  "tmdb_collection_appearances": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} film",
+        "countPlural=other": "{count} films"
+      }
+    }
+  ],
+  "media_details_title": "Détails",
+  "common_no_poster_available": "Aucune affiche disponible",
+  "media_season_episode": "Saison {season} · Épisode {episode}",
+  "media_original_title": "Titre original : {title}",
+  "media_runtime_minutes": "{minutes} min",
+  "credits_scene_both_title": "Contient une scène pendant le générique et une scène post-générique",
+  "credits_scene_mid_title": "Contient une scène pendant le générique",
+  "credits_scene_post_title": "Contient une scène post-générique",
+  "media_more_from_studio": "Plus de {name}",
+  "media_play_count": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} lecture",
+        "countPlural=other": "{count} lectures"
+      }
+    }
+  ],
+  "media_refresh_metadata": "Actualiser les métadonnées",
+  "media_where_to_watch": "Où regarder",
+  "media_release_schedule": "Calendrier de sortie",
+  "media_release_theatrical": "Cinéma",
+  "media_release_digital": "Numérique",
+  "media_release_physical": "Physique",
+  "media_refreshing": "Actualisation…",
+  "media_refresh_failed": "Échec de l’actualisation",
+  "common_done": "Terminé !",
+  "movie_status_released": "Sorti",
+  "movie_status_post_production": "Post-production",
+  "movie_status_in_production": "En production",
+  "movie_status_planned": "Prévu",
+  "movie_status_rumored": "Rumeur",
+  "movie_status_canceled": "Annulé",
+  "show_details_title": "Détails de la série",
+  "season_details_title": "Détails de la saison",
+  "episode_details_title": "Détails de l’épisode",
+  "page_title_pair": "{parent} - {child}",
+  "show_season_count": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} saison",
+        "countPlural=other": "{count} saisons"
+      }
+    }
+  ],
+  "show_seasons": "Saisons",
+  "show_episodes": "Épisodes",
+  "show_episode_count_label": [
+    {
+      "declarations": [
+        "input count",
+        "local countPlural = count: plural"
+      ],
+      "selectors": [
+        "countPlural"
+      ],
+      "match": {
+        "countPlural=one": "{count} épisode",
+        "countPlural=other": "{count} épisodes"
+      }
+    }
+  ],
+  "show_no_overview": "Aucun synopsis disponible.",
+  "media_episode_number": "Épisode {number}",
+  "season_premiered": "Première diffusion le {date}",
+  "season_overview": "Synopsis de la saison",
+  "episode_short_number": "ÉP {number}",
+  "episode_no_overview": "Aucun synopsis disponible pour cet épisode.",
+  "common_view_details": "Voir les détails",
+  "media_runtime_minutes_upper": "{minutes} MIN",
+  "tvdb_episode_not_tracked_short": "Pas encore suivi - cet épisode existe peut-être aussi sur TMDB, mais il n’a pas été associé. Essayez « Actualiser les métadonnées » ci-dessus.",
+  "episode_enlarge_thumbnail_for": "Agrandir la vignette de {title}",
+  "episode_enlarge_thumbnail": "Agrandir la vignette",
+  "episode_no_thumbnail": "Pas de vignette",
+  "episode_guest_stars": "Invités",
+  "tvdb_episode_not_tracked_title": "Pas encore suivi",
+  "tvdb_episode_not_tracked_body": "Cet épisode existe peut-être aussi sur TMDB, mais il n’a pas encore été associé à sa position TVDB : il ne peut donc pas être marqué comme vu, noté ni ajouté à la collection. Essayez « Actualiser la correspondance des épisodes » ci-dessous.",
+  "tvdb_refresh_episode_matching": "Actualiser la correspondance des épisodes"
 }
