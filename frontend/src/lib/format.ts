@@ -60,3 +60,13 @@ export function formatTimeAgo(date: DateInput): string {
   if (months < 12) return m.time_ago_months({ count: months });
   return m.time_ago_years({ count: Math.floor(months / 12) });
 }
+
+// File sizes in binary units with localized unit symbols (GB / Go).
+export function formatBytes(bytes: number): string {
+  const fixed = (value: number, digits: number) =>
+    formatNumber(value, { minimumFractionDigits: digits, maximumFractionDigits: digits });
+  if (bytes >= 1073741824) return m.unit_gigabytes({ value: fixed(bytes / 1073741824, 2) });
+  if (bytes >= 1048576) return m.unit_megabytes({ value: fixed(bytes / 1048576, 1) });
+  if (bytes >= 1024) return m.unit_kilobytes({ value: fixed(bytes / 1024, 0) });
+  return m.unit_bytes({ value: bytes });
+}
