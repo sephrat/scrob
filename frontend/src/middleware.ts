@@ -2,21 +2,7 @@ import { defineMiddleware } from "astro:middleware";
 import { api } from "./lib/api";
 import { paraglideMiddleware } from "./paraglide/server.js";
 import { cookieMaxAge, cookieName, isLocale } from "./paraglide/runtime.js";
-
-// A copy of the request whose Cookie header carries `locale` as the language
-// cookie, so Paraglide's cookie strategy picks it up on this request already.
-// Only used for locale detection (next() still gets the original request), so
-// it copies URL and headers but never the body: new Request(request) would take
-// over the original body stream and break POST handlers.
-function withLocaleCookie(request: Request, locale: string): Request {
-  const others = (request.headers.get("cookie") ?? "")
-    .split(";")
-    .map(c => c.trim())
-    .filter(c => c && !c.startsWith(`${cookieName}=`));
-  const headers = new Headers(request.headers);
-  headers.set("cookie", [...others, `${cookieName}=${locale}`].join("; "));
-  return new Request(request.url, { headers });
-}
+import { setAccountLocale } from "./lib/ui-locale";
 
 const PUBLIC_ROUTES = ["/login", "/register", "/logout", "/oidc-callback", "/oidc-start", "/link", "/site.webmanifest", "/favicon.ico", "/favicon.svg", "/apple-touch-icon.png", "/sw.js", "/offline.html"];
 // /api/proxy/auth/device/code and /device/token are the RFC 8628 endpoints a
@@ -169,24 +155,37 @@ export const onRequest = defineMiddleware(async (context, next) => {
     context.locals.hasRpdbKey = !!context.locals.settings?.has_rpdb_key;
   }
 
-  // UI language. Paraglide resolves it from the ui_language cookie, then
-  // Accept-Language, then English, and keeps it per-request (AsyncLocalStorage)
-  // for every m.*() call made while rendering. The account preference
-  // (user_settings.ui_language) is the source of truth for signed-in users: a
-  // new device or browser has no cookie yet, so mirror it in here and render
-  // this very request in it instead of waiting for a visit to /settings. A null
-  // preference means "follow the browser" and leaves any cookie alone (e.g. one
-  // picked on the login page).
+  // UI language. Paraglide keeps it per-request (AsyncLocalStorage) for every
+  // m.*() call made while rendering; see astro.config.mjs for the resolution
+  // order. The account preference (user_settings.ui_language) is the source of
+  // truth for signed-in users, so hand it to the custom-account strategy, which
+  // renders this very request in it - a new device or browser has no cookie yet
+  // and should not have to wait for a visit to /settings. A null preference
+  // means "follow the browser" and falls through to the cookie (e.g. one picked
+  // on the login page) and then Accept-Language.
   const accountLocale = context.locals.settings?.ui_language;
-  let localeRequest = context.request;
-  if (accountLocale && isLocale(accountLocale) && context.cookies.get(cookieName)?.value !== accountLocale) {
-    context.cookies.set(cookieName, accountLocale, { path: "/", sameSite: "lax", maxAge: cookieMaxAge });
-    localeRequest = withLocaleCookie(context.request, accountLocale);
+  if (accountLocale && isLocale(accountLocale)) {
+    setAccountLocale(context.request, accountLocale);
+    // Client-side <script>s resolve the locale on their own, from the cookie -
+    // they can't see locals - so mirror the preference into it or the SSR HTML
+    // and anything rendered in the browser would disagree.
+    if (context.cookies.get(cookieName)?.value !== accountLocale) {
+      context.cookies.set(cookieName, accountLocale, { path: "/", sameSite: "lax", maxAge: cookieMaxAge });
+    }
   }
 
-  const response = await paraglideMiddleware(localeRequest, () => next());
+  const response = await paraglideMiddleware(context.request, () => next());
   for (const [header, value] of Object.entries(SECURITY_HEADERS)) {
     response.headers.set(header, value);
   }
+  // The same URL now renders differently depending on the ui_language cookie and
+  // Accept-Language. Paraglide only sets Vary on its own redirects (which the
+  // cookie strategy never triggers), so declare it here: a shared cache in front
+  // of Scrob - nginx, a CDN - would otherwise serve one user's language to the
+  // next. Merged rather than overwritten so an upstream Vary survives.
+  const vary = new Set((response.headers.get("vary") ?? "").split(",").map(v => v.trim()).filter(Boolean));
+  vary.add("Cookie");
+  vary.add("Accept-Language");
+  response.headers.set("Vary", [...vary].join(", "));
   return response;
 });

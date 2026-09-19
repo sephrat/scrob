@@ -22,13 +22,16 @@ export default defineConfig({
   vite: {
     plugins: [
       tailwindcss(),
-      // UI translations. The language is a user preference, not part of the
-      // URL: the ui_language cookie (mirrored from user_settings.ui_language,
-      // see middleware.ts) wins, then the browser's Accept-Language, then English.
+      // UI translations. The language is a user preference, not part of the URL.
+      // Resolution order: the signed-in user's account preference
+      // (user_settings.ui_language, injected by the custom-account strategy in
+      // src/lib/ui-locale.ts), then the ui_language cookie - which is also where
+      // client-side <script>s read it from, and where a signed-out visitor's
+      // pick lands - then the browser's Accept-Language, then English.
       paraglideVitePlugin({
         project: './project.inlang',
         outdir: './src/paraglide',
-        strategy: ['cookie', 'preferredLanguage', 'baseLocale'],
+        strategy: ['custom-account', 'cookie', 'preferredLanguage', 'baseLocale'],
         cookieName: 'ui_language',
       }),
     ],
