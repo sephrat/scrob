@@ -5,7 +5,7 @@
 // (Settings > Display Settings) replaces the cookie - see middleware.ts.
 import { UI_LANGUAGES } from "../lib/ui-languages";
 import { m } from "../paraglide/messages.js";
-import { getLocale } from "../paraglide/runtime.js";
+import { cookieMaxAge, cookieName, getLocale } from "../paraglide/runtime.js";
 
 interface Props { class?: string }
 const { class: className = "" } = Astro.props;
@@ -24,12 +24,20 @@ const current = getLocale();
   </select>
 </label>
 
-<script>
-  import { cookieMaxAge, cookieName } from '../paraglide/runtime.js';
-
-  document.querySelectorAll<HTMLSelectElement>('[data-language-picker]').forEach((select) => {
+<!--
+  define:vars keeps this inline in the page rather than importing the Paraglide
+  runtime for two constants: an import would turn it into a hoisted module, i.e.
+  one more request on the signed-out pages, which are exactly the ones a first
+  visitor loads with a cold cache.
+-->
+<script define:vars={{ __localeCookie: cookieName, __localeCookieMaxAge: cookieMaxAge }}>
+  document.querySelectorAll('[data-language-picker]').forEach((select) => {
+    // Guard against a page ever rendering two pickers: define:vars duplicates
+    // this script with the component, a hoisted module would have run once.
+    if (select.dataset.languagePicker === 'bound') return;
+    select.dataset.languagePicker = 'bound';
     select.addEventListener('change', () => {
-      document.cookie = `${cookieName}=${select.value}; path=/; SameSite=Lax; max-age=${cookieMaxAge}`;
+      document.cookie = `${__localeCookie}=${select.value}; path=/; SameSite=Lax; max-age=${__localeCookieMaxAge}`;
       location.reload();
     });
   });
