@@ -2265,5 +2265,9 @@
   "settings_email_updated": "Adresse e-mail mise à jour !",
   "conn_push_action_watched": "vu",
   "conn_push_action_rating": "note",
-  "conn_push_action_season_rating": "note de saison"
+  "conn_push_action_season_rating": "note de saison",
+  "filter_monitored": "Surveillés",
+  "filter_collected_option": "En collection",
+  "filter_not_collected_option": "Hors collection",
+  "calendar_no_filter_match": "Aucun épisode ne correspond à ces filtres."
 }

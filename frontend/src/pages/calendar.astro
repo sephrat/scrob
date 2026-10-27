@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import FilterPanel from "../components/FilterPanel.astro";
 import { api, tmdbImageUrl, type CalendarEntry } from "../lib/api";
 import { ratingPosterUrl } from "../lib/posters";
 import { formatDate } from "../lib/format";
@@ -22,18 +23,32 @@ const CALENDAR_DAY_CHOICES = [14, 30, 60, 90];
 const savedDays = Number(Astro.cookies.get("calendar_days")?.value);
 const lookaheadDays = CALENDAR_DAY_CHOICES.includes(savedDays) ? savedDays : 14;
 
+// Filters live in the URL like the other pages' FilterPanel. The Sonarr ones
+// are applied by the backend; Collected/Watched are applied below since each
+// entry already carries those flags.
+const arr = Astro.url.searchParams.getAll("arr");
+const collection = Astro.url.searchParams.get("collection") ?? "";
+const watch = Astro.url.searchParams.get("watch") ?? "";
+const sonarrOnly = arr.includes("in");
+const sonarrMonitored = arr.includes("monitored");
+
 let calendarData: Awaited<ReturnType<typeof api.calendar.get>> | null = null;
 let loadError = "";
 try {
-  calendarData = await api.calendar.get(token, true, lookaheadDays);
+  calendarData = await api.calendar.get(token, true, lookaheadDays, sonarrOnly, sonarrMonitored);
 } catch (e: any) {
   loadError = e.message;
 }
 
 // Only actually "needs" a client-side wait when there's no load error to
 // show instead - an error should never trigger the poll-and-reload loop.
+const sonarrConfigured = calendarData?.sonarr_configured ?? false;
 const needsCompute = !loadError && !calendarData?.cached;
-const entries = calendarData?.calendar?.entries ?? [];
+const entries = (calendarData?.calendar?.entries ?? []).filter((e) =>
+  (collection === "in" ? e.collected : collection === "out" ? !e.collected : true) &&
+  (watch === "watched" ? e.watched : watch === "unwatched" ? !e.watched : true)
+);
+const hasFilters = !!(arr.length || collection || watch);
 const todayIso = calendarData?.calendar?.today ?? new Date().toISOString().slice(0, 10);
 
 function dayLabel(iso: string, today: string): string {
@@ -63,9 +78,9 @@ const days = Object.keys(byDay);
 ---
 
 <Base title={m.nav_calendar()}>
-  <div class="mb-8 flex items-center justify-between gap-4">
+  <div class="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
     <h1 class="page-title">{m.nav_calendar()}</h1>
-    <div class="flex items-center gap-2 shrink-0">
+    <div class="flex flex-wrap items-center gap-2 sm:shrink-0">
     <select
       id="cal-days-select"
       aria-label={m.calendar_days_select_label()}
@@ -75,6 +90,20 @@ const days = Object.keys(byDay);
         <option value={d} selected={d === lookaheadDays}>{m.calendar_next_days({ days: d })}</option>
       ))}
     </select>
+    <FilterPanel
+      id="calendar-filters"
+      basePath="/calendar"
+      sections={[
+        ...(sonarrConfigured ? [{
+          key: "arr", label: "Sonarr", selected: arr,
+          options: [{ value: "in", label: m.filter_in_sonarr() }, { value: "monitored", label: m.filter_monitored() }],
+        }] : []),
+        { key: "collection", label: m.filter_collection(), multi: false, selected: collection ? [collection] : [],
+          options: [{ value: "in", label: m.filter_collected_option() }, { value: "out", label: m.filter_not_collected_option() }] },
+        { key: "watch", label: m.filter_watched(), multi: false, selected: watch ? [watch] : [],
+          options: [{ value: "watched", label: m.filter_watched_option() }, { value: "unwatched", label: m.filter_unwatched_option() }] },
+      ]}
+    />
     <button
       id="cal-refresh-btn"
       class="flex items-center gap-2 px-4 py-2 text-sm font-bold text-zinc-400 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-zinc-600 hover:text-zinc-200 transition-all cursor-pointer shrink-0"
@@ -93,7 +122,7 @@ const days = Object.keys(byDay);
   ) : needsCompute ? (
     <div id="cal-pending" class="py-20 text-center text-zinc-500">{m.calendar_loading()}</div>
   ) : days.length === 0 ? (
-    <p class="text-zinc-500 text-center py-10">{m.calendar_empty_days({ days: lookaheadDays })}</p>
+    <p class="text-zinc-500 text-center py-10">{hasFilters ? m.calendar_no_filter_match() : m.calendar_empty_days({ days: lookaheadDays })}</p>
   ) : (
     <div class="space-y-8">
       {days.map((day) => (

@@ -2265,5 +2265,9 @@
   "settings_email_updated": "Email updated successfully!",
   "conn_push_action_watched": "watched",
   "conn_push_action_rating": "rating",
-  "conn_push_action_season_rating": "season rating"
+  "conn_push_action_season_rating": "season rating",
+  "filter_monitored": "Monitored",
+  "filter_collected_option": "Collected",
+  "filter_not_collected_option": "Not Collected",
+  "calendar_no_filter_match": "No episodes match these filters."
 }
